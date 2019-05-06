@@ -159,6 +159,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Tromps.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="SQL\Data-Tier.dacpac" />
     <None Include="Tromps.edmx.diagram">
       <DependentUpon>Tromps.edmx</DependentUpon>
     </None>
@@ -178,6 +179,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SQL\script.sql" />
     <Content Include="Tromps.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Tromps.Context.cs</LastGenOutput>
