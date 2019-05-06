@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telphoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trompsDataSet = new Tromps_Restoration.TrompsDataSet();
             this.customersTableAdapter = new Tromps_Restoration.TrompsDataSetTableAdapters.CustomersTableAdapter();
@@ -50,10 +45,18 @@
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.healthAndSafteyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.machineSpecificToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.customerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telphoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trompsDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -61,46 +64,17 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customerIdDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.telphoneNumberDataGridViewTextBoxColumn,
             this.addressDataGridViewTextBoxColumn,
             this.emailAddressDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.customersBindingSource;
+            this.dataGridView1.DataSource = this.customersBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(0, 31);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(635, 407);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // telphoneNumberDataGridViewTextBoxColumn
-            // 
-            this.telphoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Telphone Number";
-            this.telphoneNumberDataGridViewTextBoxColumn.HeaderText = "Telphone Number";
-            this.telphoneNumberDataGridViewTextBoxColumn.Name = "telphoneNumberDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // emailAddressDataGridViewTextBoxColumn
-            // 
-            this.emailAddressDataGridViewTextBoxColumn.DataPropertyName = "Email Address";
-            this.emailAddressDataGridViewTextBoxColumn.HeaderText = "Email Address";
-            this.emailAddressDataGridViewTextBoxColumn.Name = "emailAddressDataGridViewTextBoxColumn";
             // 
             // customersBindingSource
             // 
@@ -142,14 +116,14 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.exitToolStripMenuItem.Text = "Home";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitToolStripMenuItem1_Click);
             // 
@@ -169,7 +143,7 @@
             this.customersToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.customersToolStripMenuItem.Enabled = false;
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.customersToolStripMenuItem.Text = "Customers";
             // 
             // machinesToolStripMenuItem
@@ -178,7 +152,7 @@
             this.machineHiresToolStripMenuItem,
             this.machineServicesToolStripMenuItem});
             this.machinesToolStripMenuItem.Name = "machinesToolStripMenuItem";
-            this.machinesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.machinesToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.machinesToolStripMenuItem.Text = "Machines";
             this.machinesToolStripMenuItem.Click += new System.EventHandler(this.MachinesToolStripMenuItem_Click);
             // 
@@ -202,20 +176,62 @@
             this.healthAndSafteyToolStripMenuItem,
             this.machineSpecificToolStripMenuItem});
             this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
-            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(117, 23);
             this.documentationToolStripMenuItem.Text = "Documentation";
             // 
             // healthAndSafteyToolStripMenuItem
             // 
             this.healthAndSafteyToolStripMenuItem.Name = "healthAndSafteyToolStripMenuItem";
-            this.healthAndSafteyToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.healthAndSafteyToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.healthAndSafteyToolStripMenuItem.Text = "Health and Saftey";
             // 
             // machineSpecificToolStripMenuItem
             // 
             this.machineSpecificToolStripMenuItem.Name = "machineSpecificToolStripMenuItem";
-            this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.machineSpecificToolStripMenuItem.Text = "Machine Specific";
+            // 
+            // customersBindingSource1
+            // 
+            this.customersBindingSource1.DataMember = "Customers";
+            this.customersBindingSource1.DataSource = this.trompsDataSet;
+            // 
+            // customerIdDataGridViewTextBoxColumn
+            // 
+            this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerId";
+            this.customerIdDataGridViewTextBoxColumn.HeaderText = "CustomerId";
+            this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
+            this.customerIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // telphoneNumberDataGridViewTextBoxColumn
+            // 
+            this.telphoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Telphone Number";
+            this.telphoneNumberDataGridViewTextBoxColumn.HeaderText = "Telphone Number";
+            this.telphoneNumberDataGridViewTextBoxColumn.Name = "telphoneNumberDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // emailAddressDataGridViewTextBoxColumn
+            // 
+            this.emailAddressDataGridViewTextBoxColumn.DataPropertyName = "Email Address";
+            this.emailAddressDataGridViewTextBoxColumn.HeaderText = "Email Address";
+            this.emailAddressDataGridViewTextBoxColumn.Name = "emailAddressDataGridViewTextBoxColumn";
             // 
             // Customers
             // 
@@ -234,6 +250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trompsDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,11 +262,6 @@
         private TrompsDataSet trompsDataSet;
         private System.Windows.Forms.BindingSource customersBindingSource;
         private TrompsDataSetTableAdapters.CustomersTableAdapter customersTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telphoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailAddressDataGridViewTextBoxColumn;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -262,5 +274,12 @@
         private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem healthAndSafteyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem machineSpecificToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telphoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource customersBindingSource1;
     }
 }

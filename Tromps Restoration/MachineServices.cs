@@ -49,5 +49,12 @@ namespace Tromps_Restoration
             this.Hide();
             customers.Show();
         }
+
+        private void MachineServices_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'trompsDataSet.Machine_Services' table. You can move, or remove it, as needed.
+            this.machine_ServicesTableAdapter.Fill(this.trompsDataSet.Machine_Services);
+
+        }
     }
 }

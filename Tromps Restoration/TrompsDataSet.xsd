@@ -105,6 +105,56 @@ FROM            Machines</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Machine ServicesTableAdapter" GeneratorDataComponentClassName="Machine_ServicesTableAdapter" Name="Machine Services" UserDataComponentName="Machine ServicesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TrompsConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Machines.[Machine Name], Machines.[Machine Classification], Machines.[Machine Serial Number], [Machine Services].[Cost of Service], 
+                         [Machine Services].[Day Booked Out]
+FROM            [Machine Services] INNER JOIN
+                         Machines ON [Machine Services].[Machine ID] = Machines.[Machine Id]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Machine Name" DataSetColumn="Machine Name" />
+              <Mapping SourceColumn="Machine Classification" DataSetColumn="Machine Classification" />
+              <Mapping SourceColumn="Machine Serial Number" DataSetColumn="Machine Serial Number" />
+              <Mapping SourceColumn="Cost of Service" DataSetColumn="Cost of Service" />
+              <Mapping SourceColumn="Day Booked Out" DataSetColumn="Day Booked Out" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Hire OrdersTableAdapter" GeneratorDataComponentClassName="Hire_OrdersTableAdapter" Name="Hire Orders" UserDataComponentName="Hire OrdersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TrompsConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Customers.[First Name], Customers.[Last Name], Machines.[Machine Name], Machines.[Machine Serial Number], Customers.[Telphone Number], 
+                         Customers.Address, [Hire Orders].[Cost Per Day], [Hire Orders].[Date Booked Out]
+FROM            [Hire Orders] INNER JOIN
+                         Customers ON [Hire Orders].[Customer ID] = Customers.CustomerId INNER JOIN
+                         Machines ON [Hire Orders].[Machine ID] = Machines.[Machine Id]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="First Name" DataSetColumn="First Name" />
+              <Mapping SourceColumn="Last Name" DataSetColumn="Last Name" />
+              <Mapping SourceColumn="Machine Name" DataSetColumn="Machine Name" />
+              <Mapping SourceColumn="Machine Serial Number" DataSetColumn="Machine Serial Number" />
+              <Mapping SourceColumn="Telphone Number" DataSetColumn="Telphone Number" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="Cost Per Day" DataSetColumn="Cost Per Day" />
+              <Mapping SourceColumn="Date Booked Out" DataSetColumn="Date Booked Out" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -113,7 +163,7 @@ FROM            Machines</CommandText>
   <xs:element name="TrompsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TrompsDataSet" msprop:Generator_UserDSName="TrompsDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Customers" msprop:Generator_TableClassName="CustomersDataTable" msprop:Generator_TableVarName="tableCustomers" msprop:Generator_RowChangedName="CustomersRowChanged" msprop:Generator_TablePropName="Customers" msprop:Generator_RowDeletingName="CustomersRowDeleting" msprop:Generator_RowChangingName="CustomersRowChanging" msprop:Generator_RowEvHandlerName="CustomersRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomersRowDeleted" msprop:Generator_RowClassName="CustomersRow" msprop:Generator_UserTableName="Customers" msprop:Generator_RowEvArgName="CustomersRowChangeEvent">
+        <xs:element name="Customers" msprop:Generator_TableClassName="CustomersDataTable" msprop:Generator_TableVarName="tableCustomers" msprop:Generator_TablePropName="Customers" msprop:Generator_RowDeletingName="CustomersRowDeleting" msprop:Generator_RowChangingName="CustomersRowChanging" msprop:Generator_RowEvHandlerName="CustomersRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomersRowDeleted" msprop:Generator_UserTableName="Customers" msprop:Generator_RowChangedName="CustomersRowChanged" msprop:Generator_RowEvArgName="CustomersRowChangeEvent" msprop:Generator_RowClassName="CustomersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CustomerId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCustomerId" msprop:Generator_ColumnPropNameInRow="CustomerId" msprop:Generator_ColumnPropNameInTable="CustomerIdColumn" msprop:Generator_UserColumnName="CustomerId" type="xs:int" />
@@ -155,7 +205,7 @@ FROM            Machines</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Machines" msprop:Generator_TableClassName="MachinesDataTable" msprop:Generator_TableVarName="tableMachines" msprop:Generator_TablePropName="Machines" msprop:Generator_RowDeletingName="MachinesRowDeleting" msprop:Generator_RowChangingName="MachinesRowChanging" msprop:Generator_RowEvHandlerName="MachinesRowChangeEventHandler" msprop:Generator_RowDeletedName="MachinesRowDeleted" msprop:Generator_UserTableName="Machines" msprop:Generator_RowChangedName="MachinesRowChanged" msprop:Generator_RowEvArgName="MachinesRowChangeEvent" msprop:Generator_RowClassName="MachinesRow">
+        <xs:element name="Machines" msprop:Generator_TableClassName="MachinesDataTable" msprop:Generator_TableVarName="tableMachines" msprop:Generator_RowChangedName="MachinesRowChanged" msprop:Generator_TablePropName="Machines" msprop:Generator_RowDeletingName="MachinesRowDeleting" msprop:Generator_RowChangingName="MachinesRowChanging" msprop:Generator_RowEvHandlerName="MachinesRowChangeEventHandler" msprop:Generator_RowDeletedName="MachinesRowDeleted" msprop:Generator_RowClassName="MachinesRow" msprop:Generator_UserTableName="Machines" msprop:Generator_RowEvArgName="MachinesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Machine_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnMachine_Name" msprop:Generator_ColumnPropNameInRow="Machine_Name" msprop:Generator_ColumnPropNameInTable="Machine_NameColumn" msprop:Generator_UserColumnName="Machine Name">
@@ -179,6 +229,85 @@ FROM            Machines</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Machine_x0020_Services" msprop:Generator_TableClassName="Machine_ServicesDataTable" msprop:Generator_TableVarName="tableMachine_Services" msprop:Generator_TablePropName="Machine_Services" msprop:Generator_RowDeletingName="Machine_ServicesRowDeleting" msprop:Generator_RowChangingName="Machine_ServicesRowChanging" msprop:Generator_RowEvHandlerName="Machine_ServicesRowChangeEventHandler" msprop:Generator_RowDeletedName="Machine_ServicesRowDeleted" msprop:Generator_UserTableName="Machine Services" msprop:Generator_RowChangedName="Machine_ServicesRowChanged" msprop:Generator_RowEvArgName="Machine_ServicesRowChangeEvent" msprop:Generator_RowClassName="Machine_ServicesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Machine_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnMachine_Name" msprop:Generator_ColumnPropNameInRow="Machine_Name" msprop:Generator_ColumnPropNameInTable="Machine_NameColumn" msprop:Generator_UserColumnName="Machine Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Machine_x0020_Classification" msprop:Generator_ColumnVarNameInTable="columnMachine_Classification" msprop:Generator_ColumnPropNameInRow="Machine_Classification" msprop:Generator_ColumnPropNameInTable="Machine_ClassificationColumn" msprop:Generator_UserColumnName="Machine Classification">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Machine_x0020_Serial_x0020_Number" msprop:Generator_ColumnVarNameInTable="columnMachine_Serial_Number" msprop:Generator_ColumnPropNameInRow="Machine_Serial_Number" msprop:Generator_ColumnPropNameInTable="Machine_Serial_NumberColumn" msprop:Generator_UserColumnName="Machine Serial Number">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cost_x0020_of_x0020_Service" msprop:Generator_ColumnVarNameInTable="columnCost_of_Service" msprop:Generator_ColumnPropNameInRow="Cost_of_Service" msprop:Generator_ColumnPropNameInTable="Cost_of_ServiceColumn" msprop:Generator_UserColumnName="Cost of Service" type="xs:decimal" />
+              <xs:element name="Day_x0020_Booked_x0020_Out" msprop:Generator_ColumnVarNameInTable="columnDay_Booked_Out" msprop:Generator_ColumnPropNameInRow="Day_Booked_Out" msprop:Generator_ColumnPropNameInTable="Day_Booked_OutColumn" msprop:Generator_UserColumnName="Day Booked Out" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Hire_x0020_Orders" msprop:Generator_TableClassName="Hire_OrdersDataTable" msprop:Generator_TableVarName="tableHire_Orders" msprop:Generator_TablePropName="Hire_Orders" msprop:Generator_RowDeletingName="Hire_OrdersRowDeleting" msprop:Generator_RowChangingName="Hire_OrdersRowChanging" msprop:Generator_RowEvHandlerName="Hire_OrdersRowChangeEventHandler" msprop:Generator_RowDeletedName="Hire_OrdersRowDeleted" msprop:Generator_UserTableName="Hire Orders" msprop:Generator_RowChangedName="Hire_OrdersRowChanged" msprop:Generator_RowEvArgName="Hire_OrdersRowChangeEvent" msprop:Generator_RowClassName="Hire_OrdersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="First_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnFirst_Name" msprop:Generator_ColumnPropNameInRow="First_Name" msprop:Generator_ColumnPropNameInTable="First_NameColumn" msprop:Generator_UserColumnName="First Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Last_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnLast_Name" msprop:Generator_ColumnPropNameInRow="Last_Name" msprop:Generator_ColumnPropNameInTable="Last_NameColumn" msprop:Generator_UserColumnName="Last Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Machine_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnMachine_Name" msprop:Generator_ColumnPropNameInRow="Machine_Name" msprop:Generator_ColumnPropNameInTable="Machine_NameColumn" msprop:Generator_UserColumnName="Machine Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Machine_x0020_Serial_x0020_Number" msprop:Generator_ColumnVarNameInTable="columnMachine_Serial_Number" msprop:Generator_ColumnPropNameInRow="Machine_Serial_Number" msprop:Generator_ColumnPropNameInTable="Machine_Serial_NumberColumn" msprop:Generator_UserColumnName="Machine Serial Number">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telphone_x0020_Number" msprop:Generator_ColumnVarNameInTable="columnTelphone_Number" msprop:Generator_ColumnPropNameInRow="Telphone_Number" msprop:Generator_ColumnPropNameInTable="Telphone_NumberColumn" msprop:Generator_UserColumnName="Telphone Number">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cost_x0020_Per_x0020_Day" msprop:Generator_ColumnVarNameInTable="columnCost_Per_Day" msprop:Generator_ColumnPropNameInRow="Cost_Per_Day" msprop:Generator_ColumnPropNameInTable="Cost_Per_DayColumn" msprop:Generator_UserColumnName="Cost Per Day" type="xs:decimal" />
+              <xs:element name="Date_x0020_Booked_x0020_Out" msprop:Generator_ColumnVarNameInTable="columnDate_Booked_Out" msprop:Generator_ColumnPropNameInRow="Date_Booked_Out" msprop:Generator_ColumnPropNameInTable="Date_Booked_OutColumn" msprop:Generator_UserColumnName="Date Booked Out" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

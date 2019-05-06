@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +42,18 @@
             this.healthAndSafteyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.machineSpecificToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.trompsDataSet = new Tromps_Restoration.TrompsDataSet();
+            this.machineServicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.machine_ServicesTableAdapter = new Tromps_Restoration.TrompsDataSetTableAdapters.Machine_ServicesTableAdapter();
+            this.machineNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.machineClassificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.machineSerialNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costOfServiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayBookedOutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trompsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machineServicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -54,8 +65,8 @@
             this.documentationToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 27);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(543, 27);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -145,25 +156,81 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.machineNameDataGridViewTextBoxColumn,
+            this.machineClassificationDataGridViewTextBoxColumn,
+            this.machineSerialNumberDataGridViewTextBoxColumn,
+            this.costOfServiceDataGridViewTextBoxColumn,
+            this.dayBookedOutDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.machineServicesBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 423);
+            this.dataGridView1.Size = new System.Drawing.Size(543, 338);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // trompsDataSet
+            // 
+            this.trompsDataSet.DataSetName = "TrompsDataSet";
+            this.trompsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // machineServicesBindingSource
+            // 
+            this.machineServicesBindingSource.DataMember = "Machine Services";
+            this.machineServicesBindingSource.DataSource = this.trompsDataSet;
+            // 
+            // machine_ServicesTableAdapter
+            // 
+            this.machine_ServicesTableAdapter.ClearBeforeFill = true;
+            // 
+            // machineNameDataGridViewTextBoxColumn
+            // 
+            this.machineNameDataGridViewTextBoxColumn.DataPropertyName = "Machine Name";
+            this.machineNameDataGridViewTextBoxColumn.HeaderText = "Machine Name";
+            this.machineNameDataGridViewTextBoxColumn.Name = "machineNameDataGridViewTextBoxColumn";
+            // 
+            // machineClassificationDataGridViewTextBoxColumn
+            // 
+            this.machineClassificationDataGridViewTextBoxColumn.DataPropertyName = "Machine Classification";
+            this.machineClassificationDataGridViewTextBoxColumn.HeaderText = "Machine Classification";
+            this.machineClassificationDataGridViewTextBoxColumn.Name = "machineClassificationDataGridViewTextBoxColumn";
+            // 
+            // machineSerialNumberDataGridViewTextBoxColumn
+            // 
+            this.machineSerialNumberDataGridViewTextBoxColumn.DataPropertyName = "Machine Serial Number";
+            this.machineSerialNumberDataGridViewTextBoxColumn.HeaderText = "Machine Serial Number";
+            this.machineSerialNumberDataGridViewTextBoxColumn.Name = "machineSerialNumberDataGridViewTextBoxColumn";
+            // 
+            // costOfServiceDataGridViewTextBoxColumn
+            // 
+            this.costOfServiceDataGridViewTextBoxColumn.DataPropertyName = "Cost of Service";
+            this.costOfServiceDataGridViewTextBoxColumn.HeaderText = "Cost of Service";
+            this.costOfServiceDataGridViewTextBoxColumn.Name = "costOfServiceDataGridViewTextBoxColumn";
+            // 
+            // dayBookedOutDataGridViewTextBoxColumn
+            // 
+            this.dayBookedOutDataGridViewTextBoxColumn.DataPropertyName = "Day Booked Out";
+            this.dayBookedOutDataGridViewTextBoxColumn.HeaderText = "Day Booked Out";
+            this.dayBookedOutDataGridViewTextBoxColumn.Name = "dayBookedOutDataGridViewTextBoxColumn";
             // 
             // MachineServices
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(543, 365);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Constantia", 9.75F);
             this.Name = "MachineServices";
             this.Text = "MachineServices";
+            this.Load += new System.EventHandler(this.MachineServices_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trompsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machineServicesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +251,13 @@
         private System.Windows.Forms.ToolStripMenuItem healthAndSafteyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem machineSpecificToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private TrompsDataSet trompsDataSet;
+        private System.Windows.Forms.BindingSource machineServicesBindingSource;
+        private TrompsDataSetTableAdapters.Machine_ServicesTableAdapter machine_ServicesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn machineNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn machineClassificationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn machineSerialNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costOfServiceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayBookedOutDataGridViewTextBoxColumn;
     }
 }

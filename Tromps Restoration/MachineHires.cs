@@ -78,5 +78,12 @@ namespace Tromps_Restoration
             this.Hide();
             customers.Show();
         }
+
+        private void MachineHires_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'trompsDataSet.Hire_Orders' table. You can move, or remove it, as needed.
+            this.hire_OrdersTableAdapter.Fill(this.trompsDataSet.Hire_Orders);
+
+        }
     }
 }
