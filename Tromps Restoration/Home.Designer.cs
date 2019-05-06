@@ -30,15 +30,15 @@
         {
             this.menuMainPage = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.machineHireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.healthSafteyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.machineSpecificToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.machineHiresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.machineServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.healthSafteyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.machineSpecificToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMainPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,8 +61,15 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(43, 22);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 23);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // managementToolStripMenuItem
             // 
@@ -70,8 +77,38 @@
             this.customersToolStripMenuItem,
             this.machineHireToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(102, 23);
             this.managementToolStripMenuItem.Text = "Management";
+            // 
+            // customersToolStripMenuItem
+            // 
+            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.customersToolStripMenuItem.Text = "Customers";
+            this.customersToolStripMenuItem.Click += new System.EventHandler(this.CustomersToolStripMenuItem_Click);
+            // 
+            // machineHireToolStripMenuItem
+            // 
+            this.machineHireToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.machineHiresToolStripMenuItem,
+            this.machineServicesToolStripMenuItem});
+            this.machineHireToolStripMenuItem.Name = "machineHireToolStripMenuItem";
+            this.machineHireToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.machineHireToolStripMenuItem.Text = "Machines";
+            this.machineHireToolStripMenuItem.Click += new System.EventHandler(this.MachineHireToolStripMenuItem_Click);
+            // 
+            // machineHiresToolStripMenuItem
+            // 
+            this.machineHiresToolStripMenuItem.Name = "machineHiresToolStripMenuItem";
+            this.machineHiresToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.machineHiresToolStripMenuItem.Text = "Machine Hires";
+            this.machineHiresToolStripMenuItem.Click += new System.EventHandler(this.MachineHiresToolStripMenuItem_Click);
+            // 
+            // machineServicesToolStripMenuItem
+            // 
+            this.machineServicesToolStripMenuItem.Name = "machineServicesToolStripMenuItem";
+            this.machineServicesToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.machineServicesToolStripMenuItem.Text = "Machine Services";
             // 
             // documentationToolStripMenuItem
             // 
@@ -83,53 +120,18 @@
             this.documentationToolStripMenuItem.Size = new System.Drawing.Size(117, 23);
             this.documentationToolStripMenuItem.Text = "Documentation";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // customersToolStripMenuItem
-            // 
-            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.customersToolStripMenuItem.Text = "Customers";
-            this.customersToolStripMenuItem.Click += new System.EventHandler(this.CustomersToolStripMenuItem_Click);
-            // 
-            // machineHireToolStripMenuItem
-            // 
-            this.machineHireToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.machineHiresToolStripMenuItem,
-            this.machineServicesToolStripMenuItem});
-            this.machineHireToolStripMenuItem.Name = "machineHireToolStripMenuItem";
-            this.machineHireToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.machineHireToolStripMenuItem.Text = "Machines";
-            this.machineHireToolStripMenuItem.Click += new System.EventHandler(this.MachineHireToolStripMenuItem_Click);
-            // 
             // healthSafteyToolStripMenuItem
             // 
             this.healthSafteyToolStripMenuItem.Name = "healthSafteyToolStripMenuItem";
-            this.healthSafteyToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.healthSafteyToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.healthSafteyToolStripMenuItem.Text = "Health and Saftey";
             this.healthSafteyToolStripMenuItem.Click += new System.EventHandler(this.HealthSafteyToolStripMenuItem_Click);
             // 
             // machineSpecificToolStripMenuItem
             // 
             this.machineSpecificToolStripMenuItem.Name = "machineSpecificToolStripMenuItem";
-            this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.machineSpecificToolStripMenuItem.Text = "Machine Specific";
-            // 
-            // machineHiresToolStripMenuItem
-            // 
-            this.machineHiresToolStripMenuItem.Name = "machineHiresToolStripMenuItem";
-            this.machineHiresToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.machineHiresToolStripMenuItem.Text = "Machine Hires";
-            // 
-            // machineServicesToolStripMenuItem
-            // 
-            this.machineServicesToolStripMenuItem.Name = "machineServicesToolStripMenuItem";
-            this.machineServicesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.machineServicesToolStripMenuItem.Text = "Machine Services";
             // 
             // Home
             // 
