@@ -44,21 +44,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtMachineName = new System.Windows.Forms.TextBox();
             this.dataGridHires = new System.Windows.Forms.DataGridView();
-            this.trompsDataSet = new Tromps_Restoration.TrompsDataSet();
             this.hireOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trompsDataSet = new Tromps_Restoration.TrompsDataSet();
             this.hire_OrdersTableAdapter = new Tromps_Restoration.TrompsDataSetTableAdapters.Hire_OrdersTableAdapter();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.machineNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.machineSerialNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telphoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costPerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateBookedOutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridHires)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trompsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hireOrdersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trompsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -87,14 +79,14 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.exitToolStripMenuItem.Text = "Home";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitToolStripMenuItem1_Click);
             // 
@@ -110,7 +102,7 @@
             // customersToolStripMenuItem
             // 
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.customersToolStripMenuItem.Text = "Customers";
             this.customersToolStripMenuItem.Click += new System.EventHandler(this.CustomersToolStripMenuItem_Click);
             // 
@@ -122,7 +114,7 @@
             this.machineHiresToolStripMenuItem,
             this.machineServicesToolStripMenuItem});
             this.machinesToolStripMenuItem.Name = "machinesToolStripMenuItem";
-            this.machinesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.machinesToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.machinesToolStripMenuItem.Text = "Machines";
             // 
             // machineHiresToolStripMenuItem
@@ -131,13 +123,13 @@
             this.machineHiresToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.machineHiresToolStripMenuItem.Enabled = false;
             this.machineHiresToolStripMenuItem.Name = "machineHiresToolStripMenuItem";
-            this.machineHiresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.machineHiresToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.machineHiresToolStripMenuItem.Text = "Machine Hires";
             // 
             // machineServicesToolStripMenuItem
             // 
             this.machineServicesToolStripMenuItem.Name = "machineServicesToolStripMenuItem";
-            this.machineServicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.machineServicesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.machineServicesToolStripMenuItem.Text = "Machine Services";
             // 
             // documentationToolStripMenuItem
@@ -146,19 +138,19 @@
             this.healthAndSafteyToolStripMenuItem,
             this.machineSpecificToolStripMenuItem});
             this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
-            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.documentationToolStripMenuItem.Text = "Documentation";
             // 
             // healthAndSafteyToolStripMenuItem
             // 
             this.healthAndSafteyToolStripMenuItem.Name = "healthAndSafteyToolStripMenuItem";
-            this.healthAndSafteyToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.healthAndSafteyToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.healthAndSafteyToolStripMenuItem.Text = "Health and Saftey";
             // 
             // machineSpecificToolStripMenuItem
             // 
             this.machineSpecificToolStripMenuItem.Name = "machineSpecificToolStripMenuItem";
-            this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.machineSpecificToolStripMenuItem.Text = "Machine Specific";
             // 
             // label1
@@ -180,84 +172,25 @@
             // 
             // dataGridHires
             // 
-            this.dataGridHires.AutoGenerateColumns = false;
             this.dataGridHires.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridHires.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.machineNameDataGridViewTextBoxColumn,
-            this.machineSerialNumberDataGridViewTextBoxColumn,
-            this.telphoneNumberDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.costPerDayDataGridViewTextBoxColumn,
-            this.dateBookedOutDataGridViewTextBoxColumn});
-            this.dataGridHires.DataSource = this.hireOrdersBindingSource;
             this.dataGridHires.Location = new System.Drawing.Point(0, 71);
             this.dataGridHires.Name = "dataGridHires";
             this.dataGridHires.Size = new System.Drawing.Size(844, 415);
             this.dataGridHires.TabIndex = 5;
-            // 
-            // trompsDataSet
-            // 
-            this.trompsDataSet.DataSetName = "TrompsDataSet";
-            this.trompsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // hireOrdersBindingSource
             // 
             this.hireOrdersBindingSource.DataMember = "Hire Orders";
             this.hireOrdersBindingSource.DataSource = this.trompsDataSet;
             // 
+            // trompsDataSet
+            // 
+            this.trompsDataSet.DataSetName = "TrompsDataSet";
+            this.trompsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // hire_OrdersTableAdapter
             // 
             this.hire_OrdersTableAdapter.ClearBeforeFill = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // machineNameDataGridViewTextBoxColumn
-            // 
-            this.machineNameDataGridViewTextBoxColumn.DataPropertyName = "Machine Name";
-            this.machineNameDataGridViewTextBoxColumn.HeaderText = "Machine Name";
-            this.machineNameDataGridViewTextBoxColumn.Name = "machineNameDataGridViewTextBoxColumn";
-            // 
-            // machineSerialNumberDataGridViewTextBoxColumn
-            // 
-            this.machineSerialNumberDataGridViewTextBoxColumn.DataPropertyName = "Machine Serial Number";
-            this.machineSerialNumberDataGridViewTextBoxColumn.HeaderText = "Machine Serial Number";
-            this.machineSerialNumberDataGridViewTextBoxColumn.Name = "machineSerialNumberDataGridViewTextBoxColumn";
-            // 
-            // telphoneNumberDataGridViewTextBoxColumn
-            // 
-            this.telphoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Telphone Number";
-            this.telphoneNumberDataGridViewTextBoxColumn.HeaderText = "Telphone Number";
-            this.telphoneNumberDataGridViewTextBoxColumn.Name = "telphoneNumberDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // costPerDayDataGridViewTextBoxColumn
-            // 
-            this.costPerDayDataGridViewTextBoxColumn.DataPropertyName = "Cost Per Day";
-            this.costPerDayDataGridViewTextBoxColumn.HeaderText = "Cost Per Day";
-            this.costPerDayDataGridViewTextBoxColumn.Name = "costPerDayDataGridViewTextBoxColumn";
-            // 
-            // dateBookedOutDataGridViewTextBoxColumn
-            // 
-            this.dateBookedOutDataGridViewTextBoxColumn.DataPropertyName = "Date Booked Out";
-            this.dateBookedOutDataGridViewTextBoxColumn.HeaderText = "Date Booked Out";
-            this.dateBookedOutDataGridViewTextBoxColumn.Name = "dateBookedOutDataGridViewTextBoxColumn";
             // 
             // MachineHires
             // 
@@ -275,8 +208,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridHires)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trompsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hireOrdersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trompsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,13 +235,5 @@
         private TrompsDataSet trompsDataSet;
         private System.Windows.Forms.BindingSource hireOrdersBindingSource;
         private TrompsDataSetTableAdapters.Hire_OrdersTableAdapter hire_OrdersTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn machineNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn machineSerialNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telphoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costPerDayDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateBookedOutDataGridViewTextBoxColumn;
     }
 }

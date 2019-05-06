@@ -31,20 +31,6 @@ namespace Tromps_Restoration
             machines.Show();
         }
 
-        private void MachineHiresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MachineHires machineHires = new MachineHires();
-            this.Hide();
-            machineHires.Show();
-        }
-
-        private void MachineServicesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MachineServices machineServices = new MachineServices();
-            this.Hide();
-            machineServices.Show();
-        }
-
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Home home = new Home();

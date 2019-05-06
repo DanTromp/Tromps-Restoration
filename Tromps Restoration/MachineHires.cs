@@ -18,6 +18,7 @@ namespace Tromps_Restoration
         SqlConnection con;
         SqlDataAdapter adapt;
         DataTable dt;
+        public static string valuePassed = "";
 
         public MachineHires()
         {
@@ -26,20 +27,10 @@ namespace Tromps_Restoration
 
         private void MachineHires_Load(object sender, EventArgs e)
         {
+            valuePassed = Machines.selectedItem;
             con = new SqlConnection(cs);
             con.Open();
-            adapt = new SqlDataAdapter("select * from [Hire Orders]", con);
-            dt = new DataTable();
-            adapt.Fill(dt);
-            dataGridHires.DataSource = dt;
-            con.Close();
-        }
-
-        private void txtMachineName_TextChanged(object sender, EventArgs e)
-        {
-            con = new SqlConnection(cs);
-            con.Open();
-            adapt = new SqlDataAdapter("select * from tbl_Employee where [Machine Name] like '" + txtMachineName.Text + "%'", con);
+            adapt = new SqlDataAdapter("select * from [Hire Orders] where [Machine ID] = '" + valuePassed + "'", con);
             dt = new DataTable();
             adapt.Fill(dt);
             dataGridHires.DataSource = dt;
@@ -51,13 +42,6 @@ namespace Tromps_Restoration
             Machines machines = new Machines();
             this.Hide();
             machines.Show();
-        }
-
-        private void MachineServicesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MachineServices machineServices = new MachineServices();
-            this.Hide();
-            machineServices.Show();
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)

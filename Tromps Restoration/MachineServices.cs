@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,12 @@ namespace Tromps_Restoration
 {
     public partial class MachineServices : Form
     {
+        string cs = ConfigurationManager.ConnectionStrings["Tromps_Restoration.Properties.Settings.TrompsConnectionString"].ConnectionString;
+        SqlConnection con;
+        SqlDataAdapter adapt;
+        DataTable dt;
+        public static string valuePassed = "";
+
         public MachineServices()
         {
             InitializeComponent();
@@ -22,13 +30,6 @@ namespace Tromps_Restoration
             Machines machines = new Machines();
             this.Hide();
             machines.Show();
-        }
-
-        private void MachineHiresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MachineHires machineHires = new MachineHires();
-            this.Hide();
-            machineHires.Show();
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,8 +54,14 @@ namespace Tromps_Restoration
         private void MachineServices_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'trompsDataSet.Machine_Services' table. You can move, or remove it, as needed.
-            this.machine_ServicesTableAdapter.Fill(this.trompsDataSet.Machine_Services);
-
+            valuePassed = Machines.selectedItem;
+            con = new SqlConnection(cs);
+            con.Open();
+            adapt = new SqlDataAdapter("select * from [Machine Services] where [Machine ID] = '" + valuePassed + "'", con);
+            dt = new DataTable();
+            adapt.Fill(dt);
+            dataGridServices.DataSource = dt;
+            con.Close();
         }
     }
 }

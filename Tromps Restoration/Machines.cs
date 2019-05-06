@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,23 +14,27 @@ namespace Tromps_Restoration
 {
     public partial class Machines : Form
     {
+        string cs = ConfigurationManager.ConnectionStrings["Tromps_Restoration.Properties.Settings.TrompsConnectionString"].ConnectionString;
+        SqlConnection con;
+        SqlDataAdapter adapt;
+        DataTable dt;
+        public static string selectedItem = "";
         public Machines()
         {
             InitializeComponent();
         }
 
-        private void MachineHire_Load(object sender, EventArgs e)
+        private void Machines_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'trompsDataSet.Machines' table. You can move, or remove it, as needed.
-            this.machinesTableAdapter.Fill(this.trompsDataSet.Machines);
+            con = new SqlConnection(cs);
+            con.Open();
+            adapt = new SqlDataAdapter("select * from [Machines]", con);
+            dt = new DataTable();
+            adapt.Fill(dt);
+            dataGridMachines.DataSource = dt;
+            con.Close();
 
-        }
-
-        private void MachineServicesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MachineServices machineServices = new MachineServices();
-            this.Hide();
-            machineServices.Show();
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,6 +61,32 @@ namespace Tromps_Restoration
             Home home = new Home();
             this.Hide();
             home.Show();
+        }
+
+        private void BtnRunReport_Click(object sender, EventArgs e)
+        {
+            var selectedMachine = dataGridMachines.SelectedCells;
+            selectedItem = selectedMachine[0].Value.ToString();
+            var reportType = comboReport.SelectedItem;
+
+            switch (reportType)
+            {
+                case "Hire":
+                    MachineHires machineHires = new MachineHires();
+                    machineHires.Show();
+                    break;
+                case "Service":
+                    MachineServices machineServices = new MachineServices();
+                    machineServices.Show();
+                    break;
+                case "Dual":
+                    
+                    break;
+            }
+
+            
+
+            
         }
     }
 }
