@@ -74,11 +74,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MachineHires.cs">
+    <Compile Include="MachineReports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MachineHires.Designer.cs">
-      <DependentUpon>MachineHires.cs</DependentUpon>
+    <Compile Include="MachineReports.Designer.cs">
+      <DependentUpon>MachineReports.cs</DependentUpon>
     </Compile>
     <Compile Include="Machines.cs">
       <SubType>Form</SubType>
@@ -86,11 +86,11 @@
     <Compile Include="Machines.Designer.cs">
       <DependentUpon>Machines.cs</DependentUpon>
     </Compile>
-    <Compile Include="MachineServices.cs">
+    <Compile Include="NewMachine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MachineServices.Designer.cs">
-      <DependentUpon>MachineServices.cs</DependentUpon>
+    <Compile Include="NewMachine.Designer.cs">
+      <DependentUpon>NewMachine.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,14 +126,14 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MachineHires.resx">
-      <DependentUpon>MachineHires.cs</DependentUpon>
+    <EmbeddedResource Include="MachineReports.resx">
+      <DependentUpon>MachineReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Machines.resx">
       <DependentUpon>Machines.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MachineServices.resx">
-      <DependentUpon>MachineServices.cs</DependentUpon>
+    <EmbeddedResource Include="NewMachine.resx">
+      <DependentUpon>NewMachine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

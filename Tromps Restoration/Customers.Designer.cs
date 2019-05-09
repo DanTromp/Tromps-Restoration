@@ -132,7 +132,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.menuStrip1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.managementToolStripMenuItem,
@@ -140,7 +140,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(635, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(635, 31);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -150,20 +150,20 @@
             this.exitToolStripMenuItem,
             this.exitToolStripMenuItem1});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 23);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(50, 27);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(119, 28);
             this.exitToolStripMenuItem.Text = "Home";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(119, 28);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitToolStripMenuItem1_Click);
             // 
@@ -172,9 +172,9 @@
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customersToolStripMenuItem,
             this.machinesToolStripMenuItem});
-            this.managementToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managementToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(94, 23);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(111, 27);
             this.managementToolStripMenuItem.Text = "Management";
             // 
             // customersToolStripMenuItem
@@ -183,13 +183,13 @@
             this.customersToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.customersToolStripMenuItem.Enabled = false;
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.customersToolStripMenuItem.Text = "Customers";
             // 
             // machinesToolStripMenuItem
             // 
             this.machinesToolStripMenuItem.Name = "machinesToolStripMenuItem";
-            this.machinesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.machinesToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.machinesToolStripMenuItem.Text = "Machines";
             this.machinesToolStripMenuItem.Click += new System.EventHandler(this.MachinesToolStripMenuItem_Click);
             // 
@@ -199,19 +199,19 @@
             this.healthAndSafteyToolStripMenuItem,
             this.machineSpecificToolStripMenuItem});
             this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
-            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(117, 23);
+            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(128, 27);
             this.documentationToolStripMenuItem.Text = "Documentation";
             // 
             // healthAndSafteyToolStripMenuItem
             // 
             this.healthAndSafteyToolStripMenuItem.Name = "healthAndSafteyToolStripMenuItem";
-            this.healthAndSafteyToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.healthAndSafteyToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
             this.healthAndSafteyToolStripMenuItem.Text = "Health and Saftey";
             // 
             // machineSpecificToolStripMenuItem
             // 
             this.machineSpecificToolStripMenuItem.Name = "machineSpecificToolStripMenuItem";
-            this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
             this.machineSpecificToolStripMenuItem.Text = "Machine Specific";
             // 
             // Customers

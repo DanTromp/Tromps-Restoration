@@ -42,7 +42,7 @@
             // 
             // menuMainPage
             // 
-            this.menuMainPage.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.menuMainPage.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuMainPage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.managementToolStripMenuItem,
@@ -50,7 +50,7 @@
             this.menuMainPage.Location = new System.Drawing.Point(0, 0);
             this.menuMainPage.Name = "menuMainPage";
             this.menuMainPage.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuMainPage.Size = new System.Drawing.Size(699, 27);
+            this.menuMainPage.Size = new System.Drawing.Size(699, 31);
             this.menuMainPage.TabIndex = 0;
             this.menuMainPage.Text = "menuStrip1";
             // 
@@ -59,13 +59,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 23);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(50, 27);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 28);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -75,20 +75,20 @@
             this.customersToolStripMenuItem,
             this.machineHireToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(102, 23);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(111, 27);
             this.managementToolStripMenuItem.Text = "Management";
             // 
             // customersToolStripMenuItem
             // 
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
             this.customersToolStripMenuItem.Text = "Customers";
             this.customersToolStripMenuItem.Click += new System.EventHandler(this.CustomersToolStripMenuItem_Click);
             // 
             // machineHireToolStripMenuItem
             // 
             this.machineHireToolStripMenuItem.Name = "machineHireToolStripMenuItem";
-            this.machineHireToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.machineHireToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
             this.machineHireToolStripMenuItem.Text = "Machines";
             this.machineHireToolStripMenuItem.Click += new System.EventHandler(this.MachineHireToolStripMenuItem_Click);
             // 
@@ -97,9 +97,9 @@
             this.documentationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.healthSafteyToolStripMenuItem,
             this.machineSpecificToolStripMenuItem});
-            this.documentationToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.documentationToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
-            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(117, 23);
+            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(128, 27);
             this.documentationToolStripMenuItem.Text = "Documentation";
             // 
             // healthSafteyToolStripMenuItem

@@ -17,6 +17,7 @@ namespace Tromps_Restoration
         string cs = ConfigurationManager.ConnectionStrings["Tromps_Restoration.Properties.Settings.TrompsConnectionString"].ConnectionString;
         SqlConnection con;
         SqlDataAdapter adapt;
+        SqlCommand com;
         DataTable dt;
         public static string selectedItem = "";
         public Machines()
@@ -34,7 +35,6 @@ namespace Tromps_Restoration
             adapt.Fill(dt);
             dataGridMachines.DataSource = dt;
             con.Close();
-
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,28 +65,45 @@ namespace Tromps_Restoration
 
         private void BtnRunReport_Click(object sender, EventArgs e)
         {
-            var selectedMachine = dataGridMachines.SelectedCells;
+            var selectedMachine = dataGridMachines.SelectedCells;            
             selectedItem = selectedMachine[0].Value.ToString();
-            var reportType = comboReport.SelectedItem;
-
-            switch (reportType)
-            {
-                case "Hire":
-                    MachineHires machineHires = new MachineHires();
+            
+                    MachineReports machineHires = new MachineReports();
                     machineHires.Show();
-                    break;
-                case "Service":
-                    MachineServices machineServices = new MachineServices();
-                    machineServices.Show();
-                    break;
-                case "Dual":
-                    
-                    break;
+
+            
+        }
+
+        private void btnAddMachine_Click(object sender, EventArgs e)
+        {
+            NewMachine newMachine = new NewMachine();
+            newMachine.ShowDialog();            
+        }
+
+        private void BtnRemoveMachine_Click(object sender, EventArgs e)
+        {
+            con = new SqlConnection(cs);
+            com.Connection = con;
+            com.CommandText = (@"DELETE FROM [Machines] WHERE [Machine Id] = '" + dataGridMachines.SelectedCells[0].Value.ToString());
+
+            var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
+                                     "Confirm Delete!!",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                try
+                {
+                    com.ExecuteNonQuery();
+                }
+                catch (Exception exx)
+                {
+                    MessageBox.Show("Error: " + exx.Message, "Attempt To Remove Machine");
+                }
             }
-
-            
-
-            
+            else
+            {
+                
+            }
         }
     }
 }
