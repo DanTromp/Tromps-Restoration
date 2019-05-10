@@ -12,36 +12,37 @@ using System.Windows.Forms;
 
 namespace Tromps_Restoration
 {
-    public partial class NewMachine : Form
+    public partial class NewCustomer : Form
     {
         string cs = ConfigurationManager.ConnectionStrings["Tromps_Restoration.Properties.Settings.TrompsConnectionString"].ConnectionString;
         SqlConnection con;
         SqlCommand com = new SqlCommand();
-
-        public NewMachine()
+        public NewCustomer()
         {
             InitializeComponent();
         }
 
         private void BtnInsert_Click(object sender, EventArgs e)
         {
-          
             con = new SqlConnection(cs);
-            con.Open();            
+            con.Open();
 
-            string CommandText = (@"INSERT INTO [Machines] ([Machine Name], [Machine Classification], [Machine Serial Number] VALUES ('" + txtMachineName.Text + "','" + txtClassification.Text + "','" + txtSerial.Text + "'");
+            string CommandText = (@"INSERT INTO [First Name],[Last Name],[ID Number],[Telphone Number],[Email Address],[Address] VALUES ('" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtIdNo.Text + "','" + txtTelephone.Text + "','" + txtAddress.Text + "'");
 
             com = new SqlCommand(CommandText, con);
 
-            try { 
-            com.ExecuteNonQuery();
+            try
+            {
+                com.ExecuteNonQuery();
                 var confirmed = MessageBox.Show("Machine has been added to the database successfully - Add another machine?", "Attempt To Add New Machine", MessageBoxButtons.YesNo);
 
                 if (confirmed == DialogResult.Yes)
                 {
-                    txtMachineName.Text = "";
-                    txtClassification.Text = "";
-                    txtSerial.Text = "";
+                    txtFirstName.Text = "";
+                    txtLastName.Text = "";
+                    txtIdNo.Text = "";
+                    txtTelephone.Text = "";
+                    txtAddress.Text = "";
                 }
                 else
                 {
@@ -58,11 +59,6 @@ namespace Tromps_Restoration
             {
                 con.Close();
             }
-            }
-
-        private void BtnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

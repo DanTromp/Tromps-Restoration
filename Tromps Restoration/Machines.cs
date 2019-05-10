@@ -30,7 +30,7 @@ namespace Tromps_Restoration
             // TODO: This line of code loads data into the 'trompsDataSet.Machines' table. You can move, or remove it, as needed.
             con = new SqlConnection(cs);
             con.Open();
-            adapt = new SqlDataAdapter("select * from [Machines]", con);
+            adapt = new SqlDataAdapter("select [Machine Name], [Machine Classification], [Machine Serial Number] from [Machines]", con);
             dt = new DataTable();
             adapt.Fill(dt);
             dataGridMachines.DataSource = dt;
@@ -82,9 +82,11 @@ namespace Tromps_Restoration
 
         private void BtnRemoveMachine_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection(cs);
-            com.Connection = con;
-            com.CommandText = (@"DELETE FROM [Machines] WHERE [Machine Id] = '" + dataGridMachines.SelectedCells[0].Value.ToString());
+            con = new SqlConnection(cs);            
+            
+            string CommandText = (@"DELETE FROM [Machines] WHERE [Machine Id] = '" + dataGridMachines.SelectedCells[0].Value.ToString() + "'");
+
+            com = new SqlCommand(CommandText, con);
 
             var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
                                      "Confirm Delete!!",
@@ -93,11 +95,16 @@ namespace Tromps_Restoration
             {
                 try
                 {
+                    con.Open();
                     com.ExecuteNonQuery();
                 }
                 catch (Exception exx)
                 {
                     MessageBox.Show("Error: " + exx.Message, "Attempt To Remove Machine");
+                }
+                finally
+                {
+                    con.Close();
                 }
             }
             else

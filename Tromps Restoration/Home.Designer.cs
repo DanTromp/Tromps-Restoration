@@ -37,6 +37,8 @@
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.healthSafteyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.machineSpecificToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCustomers = new System.Windows.Forms.Button();
+            this.btnMachine = new System.Windows.Forms.Button();
             this.menuMainPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.menuMainPage.Location = new System.Drawing.Point(0, 0);
             this.menuMainPage.Name = "menuMainPage";
             this.menuMainPage.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuMainPage.Size = new System.Drawing.Size(699, 31);
+            this.menuMainPage.Size = new System.Drawing.Size(376, 31);
             this.menuMainPage.TabIndex = 0;
             this.menuMainPage.Text = "menuStrip1";
             // 
@@ -105,25 +107,54 @@
             // healthSafteyToolStripMenuItem
             // 
             this.healthSafteyToolStripMenuItem.Name = "healthSafteyToolStripMenuItem";
-            this.healthSafteyToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.healthSafteyToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
             this.healthSafteyToolStripMenuItem.Text = "Health and Saftey";
             this.healthSafteyToolStripMenuItem.Click += new System.EventHandler(this.HealthSafteyToolStripMenuItem_Click);
             // 
             // machineSpecificToolStripMenuItem
             // 
             this.machineSpecificToolStripMenuItem.Name = "machineSpecificToolStripMenuItem";
-            this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
             this.machineSpecificToolStripMenuItem.Text = "Machine Specific";
+            // 
+            // btnCustomers
+            // 
+            this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCustomers.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.Location = new System.Drawing.Point(12, 75);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(352, 50);
+            this.btnCustomers.TabIndex = 1;
+            this.btnCustomers.Text = "Customer Manageament";
+            this.btnCustomers.UseVisualStyleBackColor = true;
+            this.btnCustomers.Click += new System.EventHandler(this.CustomersToolStripMenuItem_Click);
+            // 
+            // btnMachine
+            // 
+            this.btnMachine.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnMachine.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMachine.Location = new System.Drawing.Point(12, 164);
+            this.btnMachine.Name = "btnMachine";
+            this.btnMachine.Size = new System.Drawing.Size(352, 50);
+            this.btnMachine.TabIndex = 2;
+            this.btnMachine.Text = "Machine Manageament";
+            this.btnMachine.UseVisualStyleBackColor = true;
+            this.btnMachine.Click += new System.EventHandler(this.MachineHireToolStripMenuItem_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 508);
+            this.AutoSize = true;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(376, 293);
+            this.Controls.Add(this.btnMachine);
+            this.Controls.Add(this.btnCustomers);
             this.Controls.Add(this.menuMainPage);
             this.Font = new System.Drawing.Font("Constantia", 9.75F);
             this.MainMenuStrip = this.menuMainPage;
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.menuMainPage.ResumeLayout(false);
             this.menuMainPage.PerformLayout();
@@ -143,5 +174,7 @@
         private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem healthSafteyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem machineSpecificToolStripMenuItem;
+        private System.Windows.Forms.Button btnCustomers;
+        private System.Windows.Forms.Button btnMachine;
     }
 }

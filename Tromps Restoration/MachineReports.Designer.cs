@@ -38,13 +38,9 @@
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.machinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.machineHiresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.machineServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.healthAndSafteyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.machineSpecificToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMachineName = new System.Windows.Forms.TextBox();
             this.dataGridHires = new System.Windows.Forms.DataGridView();
             this.hireOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trompsDataSet = new Tromps_Restoration.TrompsDataSet();
@@ -115,7 +111,7 @@
             // customersToolStripMenuItem
             // 
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.customersToolStripMenuItem.Text = "Customers";
             this.customersToolStripMenuItem.Click += new System.EventHandler(this.CustomersToolStripMenuItem_Click);
             // 
@@ -123,27 +119,9 @@
             // 
             this.machinesToolStripMenuItem.Checked = true;
             this.machinesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.machinesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.machineHiresToolStripMenuItem,
-            this.machineServicesToolStripMenuItem});
             this.machinesToolStripMenuItem.Name = "machinesToolStripMenuItem";
-            this.machinesToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
+            this.machinesToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.machinesToolStripMenuItem.Text = "Machines";
-            // 
-            // machineHiresToolStripMenuItem
-            // 
-            this.machineHiresToolStripMenuItem.Checked = true;
-            this.machineHiresToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.machineHiresToolStripMenuItem.Enabled = false;
-            this.machineHiresToolStripMenuItem.Name = "machineHiresToolStripMenuItem";
-            this.machineHiresToolStripMenuItem.Size = new System.Drawing.Size(208, 28);
-            this.machineHiresToolStripMenuItem.Text = "Machine Hires";
-            // 
-            // machineServicesToolStripMenuItem
-            // 
-            this.machineServicesToolStripMenuItem.Name = "machineServicesToolStripMenuItem";
-            this.machineServicesToolStripMenuItem.Size = new System.Drawing.Size(208, 28);
-            this.machineServicesToolStripMenuItem.Text = "Machine Services";
             // 
             // documentationToolStripMenuItem
             // 
@@ -166,36 +144,20 @@
             this.machineSpecificToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
             this.machineSpecificToolStripMenuItem.Text = "Machine Specific";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 23);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Search By Machine Name:";
-            // 
-            // txtMachineName
-            // 
-            this.txtMachineName.Location = new System.Drawing.Point(279, 42);
-            this.txtMachineName.Name = "txtMachineName";
-            this.txtMachineName.Size = new System.Drawing.Size(222, 23);
-            this.txtMachineName.TabIndex = 4;
-            // 
             // dataGridHires
             // 
-            this.dataGridHires.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridHires.AllowUserToDeleteRows = false;
+            this.dataGridHires.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridHires.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridHires.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridHires.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridHires.Location = new System.Drawing.Point(0, 37);
             this.dataGridHires.Name = "dataGridHires";
@@ -221,7 +183,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(457, 739);
+            this.label2.Location = new System.Drawing.Point(483, 723);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(223, 24);
             this.label2.TabIndex = 6;
@@ -231,14 +193,14 @@
             // 
             this.lblTotalEarned.AutoSize = true;
             this.lblTotalEarned.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEarned.Location = new System.Drawing.Point(697, 739);
+            this.lblTotalEarned.Location = new System.Drawing.Point(723, 723);
             this.lblTotalEarned.Name = "lblTotalEarned";
             this.lblTotalEarned.Size = new System.Drawing.Size(0, 24);
             this.lblTotalEarned.TabIndex = 7;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(0, 71);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 34);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -269,15 +231,19 @@
             // 
             // dataGridServices
             // 
+            this.dataGridServices.AllowUserToDeleteRows = false;
+            this.dataGridServices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridServices.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 14.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridServices.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridServices.Location = new System.Drawing.Point(0, 36);
             this.dataGridServices.Name = "dataGridServices";
@@ -301,12 +267,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(843, 772);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.lblTotalEarned);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtMachineName);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Constantia", 9.75F);
             this.Name = "MachineReports";
@@ -338,13 +303,9 @@
         private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem machinesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem machineHiresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem machineServicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem healthAndSafteyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem machineSpecificToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMachineName;
         private System.Windows.Forms.DataGridView dataGridHires;
         private TrompsDataSet trompsDataSet;
         private System.Windows.Forms.BindingSource hireOrdersBindingSource;
