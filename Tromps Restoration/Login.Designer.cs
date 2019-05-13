@@ -44,25 +44,25 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.lblPassword, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblUsername, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtUsername, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtPassword, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(36, 12);
+            this.tableLayoutPanel1.Controls.Add(this.lblUsername, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(411, 172);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(435, 172);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblPassword
             // 
             this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(50, 116);
+            this.lblPassword.Font = new System.Drawing.Font("Bookman Old Style", 15.75F);
+            this.lblPassword.Location = new System.Drawing.Point(51, 117);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(104, 25);
+            this.lblPassword.Size = new System.Drawing.Size(114, 24);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password:";
             // 
@@ -70,10 +70,10 @@
             // 
             this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(48, 30);
+            this.lblUsername.Font = new System.Drawing.Font("Bookman Old Style", 15.75F);
+            this.lblUsername.Location = new System.Drawing.Point(48, 31);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(108, 25);
+            this.lblUsername.Size = new System.Drawing.Size(120, 24);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username:";
             // 
@@ -81,22 +81,25 @@
             // 
             this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUsername.Location = new System.Drawing.Point(252, 33);
+            this.txtUsername.Font = new System.Drawing.Font("Bookman Old Style", 15.75F);
+            this.txtUsername.Location = new System.Drawing.Point(226, 27);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(112, 20);
+            this.txtUsername.Size = new System.Drawing.Size(200, 32);
             this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.Location = new System.Drawing.Point(252, 119);
+            this.txtPassword.Font = new System.Drawing.Font("Bookman Old Style", 15.75F);
+            this.txtPassword.Location = new System.Drawing.Point(226, 113);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(112, 20);
+            this.txtPassword.Size = new System.Drawing.Size(200, 32);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
+            this.btnLogin.Font = new System.Drawing.Font("Bookman Old Style", 15.75F);
             this.btnLogin.Location = new System.Drawing.Point(46, 190);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(184, 58);
@@ -107,6 +110,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Font = new System.Drawing.Font("Bookman Old Style", 15.75F);
             this.btnCancel.Location = new System.Drawing.Point(252, 190);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(185, 58);

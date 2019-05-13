@@ -29,7 +29,7 @@ namespace Tromps_Restoration
             con = new SqlConnection(cs);
             con.Open();            
 
-            string CommandText = (@"INSERT INTO [Machines] ([Machine Name], [Machine Classification], [Machine Serial Number] VALUES ('" + txtMachineName.Text + "','" + txtClassification.Text + "','" + txtSerial.Text + "'");
+            string CommandText = (@"INSERT INTO [Machines] ([Machine Name], [Machine Classification], [Machine Serial Number]) VALUES ('" + txtMachineName.Text + "','" + txtClassification.Text + "','" + txtSerial.Text + "')");
 
             com = new SqlCommand(CommandText, con);
 

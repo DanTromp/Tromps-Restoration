@@ -58,7 +58,7 @@ namespace Tromps_Restoration
         {
             con = new SqlConnection(cs);
 
-            string CommandText = (@"DELETE FROM [Customers] WHERE [CustomerId] = '" + dataGridView1.SelectedCells[0].Value.ToString() + "'");
+            string CommandText = (@"DELETE FROM [Customers] WHERE [ID Number] = '" + dataGridCustomers.SelectedCells[2].Value.ToString() + "'");
 
             com = new SqlCommand(CommandText, con);
 
@@ -71,6 +71,7 @@ namespace Tromps_Restoration
                 {
                     con.Open();
                     com.ExecuteNonQuery();
+                    Customers.ActiveForm.Refresh();
                 }
                 catch (Exception exx)
                 {
