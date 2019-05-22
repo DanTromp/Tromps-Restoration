@@ -42,5 +42,10 @@ namespace Tromps_Restoration
             this.Hide();
             machines.Show();
         }
+
+        private void BtnHiresAndServices_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

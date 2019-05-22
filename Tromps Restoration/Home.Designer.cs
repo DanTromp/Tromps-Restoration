@@ -39,6 +39,7 @@
             this.machineSpecificToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnMachine = new System.Windows.Forms.Button();
+            this.btnHiresAndServices = new System.Windows.Forms.Button();
             this.menuMainPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,13 +134,25 @@
             // 
             this.btnMachine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnMachine.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMachine.Location = new System.Drawing.Point(12, 164);
+            this.btnMachine.Location = new System.Drawing.Point(12, 142);
             this.btnMachine.Name = "btnMachine";
             this.btnMachine.Size = new System.Drawing.Size(352, 50);
             this.btnMachine.TabIndex = 2;
             this.btnMachine.Text = "Machine Manageament";
             this.btnMachine.UseVisualStyleBackColor = true;
             this.btnMachine.Click += new System.EventHandler(this.MachineHireToolStripMenuItem_Click);
+            // 
+            // btnHiresAndServices
+            // 
+            this.btnHiresAndServices.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHiresAndServices.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHiresAndServices.Location = new System.Drawing.Point(12, 210);
+            this.btnHiresAndServices.Name = "btnHiresAndServices";
+            this.btnHiresAndServices.Size = new System.Drawing.Size(352, 50);
+            this.btnHiresAndServices.TabIndex = 3;
+            this.btnHiresAndServices.Text = "Hires and Services";
+            this.btnHiresAndServices.UseVisualStyleBackColor = true;
+            this.btnHiresAndServices.Click += new System.EventHandler(this.BtnHiresAndServices_Click);
             // 
             // Home
             // 
@@ -148,6 +161,7 @@
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(376, 293);
+            this.Controls.Add(this.btnHiresAndServices);
             this.Controls.Add(this.btnMachine);
             this.Controls.Add(this.btnCustomers);
             this.Controls.Add(this.menuMainPage);
@@ -176,5 +190,6 @@
         private System.Windows.Forms.ToolStripMenuItem machineSpecificToolStripMenuItem;
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnMachine;
+        private System.Windows.Forms.Button btnHiresAndServices;
     }
 }
