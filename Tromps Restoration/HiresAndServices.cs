@@ -35,6 +35,9 @@ namespace Tromps_Restoration
 
             DataView view = new DataView(dt);
 
+            comboCustomer.Items.Add("");
+            comboMachine.Items.Add("");
+
             foreach (DataRowView row in view)
             {
                 comboCustomer.Items.Add(row["Full Name"].ToString());
@@ -46,10 +49,50 @@ namespace Tromps_Restoration
 
             DataView view2 = new DataView(dt);
 
-
             foreach (DataRowView row in view2)
             {
                 comboMachine.Items.Add(row["Machine Id"].ToString());
+            }
+
+            comboCustomer.Refresh();
+            comboMachine.Refresh();
+
+
+        }
+
+        private void BtnAccept_Click(object sender, EventArgs e)
+        {
+            bool valuesFilled = true;
+
+            if (comboCustomer.SelectedText == "")
+            {
+                comboCustomer.BackColor = Color.Red;
+                valuesFilled = false;
+            }
+            if (comboMachine.SelectedText == "")
+            { 
+                comboMachine.BackColor = Color.Red;
+                valuesFilled = false;
+            }
+            if (txtInvoiceNo.Text == "")
+            {
+                txtInvoiceNo.BackColor = Color.Red;
+                valuesFilled = false;
+            }
+            if (txtDailyCost.Text == "")
+            {
+                txtDailyCost.BackColor = Color.Red;
+                valuesFilled = false;
+            }
+
+            if (!valuesFilled)
+            {
+                MessageBox.Show("Please complete all the red fields.");
+                return;
+            }
+            else
+            {
+
             }
         }
     }

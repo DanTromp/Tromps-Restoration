@@ -30,7 +30,7 @@ namespace Tromps_Restoration
             // TODO: This line of code loads data into the 'trompsDataSet.Machines' table. You can move, or remove it, as needed.
             con = new SqlConnection(cs);
             con.Open();
-            adapt = new SqlDataAdapter("select [Machine Name], [Machine Classification], [Machine Serial Number] from [Machines]", con);
+            adapt = new SqlDataAdapter("select [Machine Id], [Machine Name], [Machine Classification], [Machine Serial Number] from [Machines]", con);
             dt = new DataTable();
             adapt.Fill(dt);
             dataGridMachines.DataSource = dt;
@@ -68,10 +68,11 @@ namespace Tromps_Restoration
             var selectedMachine = dataGridMachines.SelectedCells;            
             selectedItem = selectedMachine[0].Value.ToString();
             
+            if (selectedItem != "" || selectedItem != null) { 
                     MachineReports machineHires = new MachineReports();
                     machineHires.Show();
+            }
 
-            
         }
 
         private void btnAddMachine_Click(object sender, EventArgs e)

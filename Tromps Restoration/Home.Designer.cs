@@ -145,6 +145,7 @@
             // btnHiresAndServices
             // 
             this.btnHiresAndServices.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHiresAndServices.Enabled = false;
             this.btnHiresAndServices.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHiresAndServices.Location = new System.Drawing.Point(12, 210);
             this.btnHiresAndServices.Name = "btnHiresAndServices";

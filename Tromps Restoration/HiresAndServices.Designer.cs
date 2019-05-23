@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tabHires = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Hires = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.dateTimeIn = new System.Windows.Forms.DateTimePicker();
             this.txtInvoiceNo = new System.Windows.Forms.TextBox();
             this.txtDailyCost = new System.Windows.Forms.MaskedTextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabHires.SuspendLayout();
             this.Hires.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -61,17 +61,6 @@
             this.tabHires.SelectedIndex = 0;
             this.tabHires.Size = new System.Drawing.Size(511, 498);
             this.tabHires.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Font = new System.Drawing.Font("Bookman Old Style", 15.75F);
-            this.tabPage2.Location = new System.Drawing.Point(4, 33);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(503, 461);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Services";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Hires
             // 
@@ -186,6 +175,7 @@
             this.btnAccept.TabIndex = 6;
             this.btnAccept.Text = "Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.BtnAccept_Click);
             // 
             // btnCancel
             // 
@@ -201,7 +191,7 @@
             // 
             this.comboCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboCustomer.FormattingEnabled = true;
-            this.comboCustomer.Location = new System.Drawing.Point(269, 21);
+            this.comboCustomer.Location = new System.Drawing.Point(269, 15);
             this.comboCustomer.Name = "comboCustomer";
             this.comboCustomer.Size = new System.Drawing.Size(189, 32);
             this.comboCustomer.TabIndex = 8;
@@ -210,7 +200,7 @@
             // 
             this.comboMachine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboMachine.FormattingEnabled = true;
-            this.comboMachine.Location = new System.Drawing.Point(266, 84);
+            this.comboMachine.Location = new System.Drawing.Point(266, 78);
             this.comboMachine.Name = "comboMachine";
             this.comboMachine.Size = new System.Drawing.Size(195, 32);
             this.comboMachine.TabIndex = 9;
@@ -218,7 +208,7 @@
             // dateTimeOut
             // 
             this.dateTimeOut.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimeOut.Location = new System.Drawing.Point(263, 147);
+            this.dateTimeOut.Location = new System.Drawing.Point(263, 141);
             this.dateTimeOut.Name = "dateTimeOut";
             this.dateTimeOut.Size = new System.Drawing.Size(200, 32);
             this.dateTimeOut.TabIndex = 10;
@@ -226,7 +216,7 @@
             // dateTimeIn
             // 
             this.dateTimeIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimeIn.Location = new System.Drawing.Point(263, 210);
+            this.dateTimeIn.Location = new System.Drawing.Point(263, 204);
             this.dateTimeIn.Name = "dateTimeIn";
             this.dateTimeIn.Size = new System.Drawing.Size(200, 32);
             this.dateTimeIn.TabIndex = 11;
@@ -246,6 +236,17 @@
             this.txtDailyCost.Name = "txtDailyCost";
             this.txtDailyCost.Size = new System.Drawing.Size(195, 32);
             this.txtDailyCost.TabIndex = 13;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Font = new System.Drawing.Font("Bookman Old Style", 15.75F);
+            this.tabPage2.Location = new System.Drawing.Point(4, 33);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(503, 461);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Services";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // HiresAndServices
             // 
