@@ -43,7 +43,7 @@ namespace Tromps_Restoration
                 comboCustomer.Items.Add(row["Full Name"].ToString());
             }
 
-            adapt = new SqlDataAdapter("SELECT [Machine ID] FROM [Machines]", con);
+            adapt = new SqlDataAdapter("SELECT [Machine Number] FROM [Machines] ORDER BY 1 desc", con);
             dt = new DataTable();
             adapt.Fill(dt);
 
@@ -51,7 +51,7 @@ namespace Tromps_Restoration
 
             foreach (DataRowView row in view2)
             {
-                comboMachine.Items.Add(row["Machine Id"].ToString());
+                comboMachine.Items.Add(row["Machine Number"].ToString());
             }
 
             comboCustomer.Refresh();

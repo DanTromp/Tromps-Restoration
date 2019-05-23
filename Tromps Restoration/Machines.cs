@@ -30,7 +30,7 @@ namespace Tromps_Restoration
             // TODO: This line of code loads data into the 'trompsDataSet.Machines' table. You can move, or remove it, as needed.
             con = new SqlConnection(cs);
             con.Open();
-            adapt = new SqlDataAdapter("select [Machine Id], [Machine Name], [Machine Classification], [Machine Serial Number] from [Machines]", con);
+            adapt = new SqlDataAdapter("select [Machine Number], [Machine Name], [Machine Classification], [Machine Serial Number] from [Machines] ORDER BY [Machine Number] asc", con);
             dt = new DataTable();
             adapt.Fill(dt);
             dataGridMachines.DataSource = dt;
@@ -85,7 +85,7 @@ namespace Tromps_Restoration
         {
             con = new SqlConnection(cs);            
             
-            string CommandText = (@"DELETE FROM [Machines] WHERE [Machine Id] = '" + dataGridMachines.SelectedCells[0].Value.ToString() + "'");
+            string CommandText = (@"DELETE FROM [Machines] WHERE [Machine Number] = '" + dataGridMachines.SelectedCells[0].Value.ToString() + "'");
 
             com = new SqlCommand(CommandText, con);
 

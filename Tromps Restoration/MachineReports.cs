@@ -30,7 +30,7 @@ namespace Tromps_Restoration
             valuePassed = Machines.selectedItem;
             con = new SqlConnection(cs);
             con.Open();
-            adapt = new SqlDataAdapter("select [Date Booked Out],[Date Booked In],[Invoice Number],[Cost Per Day],[Total Cost] from [Hire Orders] where [Machine ID] = " + int.Parse(valuePassed), con);
+            adapt = new SqlDataAdapter("select [Date Booked Out],[Date Booked In],[Invoice Number],[Cost Per Day],[Total Cost] from [Hire Orders] where [Machine Number] = " + int.Parse(valuePassed), con);
             dt = new DataTable();
             adapt.Fill(dt);
             dataGridHires.DataSource = dt;
@@ -49,7 +49,7 @@ namespace Tromps_Restoration
             valuePassed = Machines.selectedItem;
             con = new SqlConnection(cs);
             con.Open();
-            adapt = new SqlDataAdapter("select [Day Booked Out],[Day Booked In],[Cost of Service] from [Machine Services] where [Machine ID] = '" + int.Parse(valuePassed) + "'", con);
+            adapt = new SqlDataAdapter("select [Day Booked Out],[Day Booked In],[Cost of Service] from [Machine Services] where [Machine Number] = '" + int.Parse(valuePassed) + "'", con);
             dt = new DataTable();
             adapt.Fill(dt);
             dataGridServices.DataSource = dt;

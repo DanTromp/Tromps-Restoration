@@ -42,11 +42,11 @@
             this.machineSpecificToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridMachines = new System.Windows.Forms.DataGridView();
             this.machinesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trompsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trompsDataSet = new Tromps_Restoration.TrompsDataSet();
             this.btnRunReport = new System.Windows.Forms.Button();
             this.btnAddMachine = new System.Windows.Forms.Button();
             this.btnRemoveMachine = new System.Windows.Forms.Button();
-            this.trompsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trompsDataSet = new Tromps_Restoration.TrompsDataSet();
             this.trompsDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.machinesTableAdapter = new Tromps_Restoration.TrompsDataSetTableAdapters.MachinesTableAdapter();
             this.menuStrip1.SuspendLayout();
@@ -67,7 +67,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(495, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(687, 31);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -146,7 +146,7 @@
             this.dataGridMachines.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -157,46 +157,13 @@
             this.dataGridMachines.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridMachines.Name = "dataGridMachines";
             this.dataGridMachines.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridMachines.Size = new System.Drawing.Size(495, 307);
+            this.dataGridMachines.Size = new System.Drawing.Size(687, 307);
             this.dataGridMachines.TabIndex = 3;
             // 
             // machinesBindingSource
             // 
             this.machinesBindingSource.DataMember = "Machines";
             this.machinesBindingSource.DataSource = this.trompsDataSetBindingSource;
-            // 
-            // btnRunReport
-            // 
-            this.btnRunReport.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRunReport.Location = new System.Drawing.Point(177, 369);
-            this.btnRunReport.Name = "btnRunReport";
-            this.btnRunReport.Size = new System.Drawing.Size(147, 34);
-            this.btnRunReport.TabIndex = 4;
-            this.btnRunReport.Text = "Run Report";
-            this.btnRunReport.UseVisualStyleBackColor = true;
-            this.btnRunReport.Click += new System.EventHandler(this.BtnRunReport_Click);
-            // 
-            // btnAddMachine
-            // 
-            this.btnAddMachine.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddMachine.Location = new System.Drawing.Point(12, 432);
-            this.btnAddMachine.Name = "btnAddMachine";
-            this.btnAddMachine.Size = new System.Drawing.Size(155, 38);
-            this.btnAddMachine.TabIndex = 7;
-            this.btnAddMachine.Text = "Add Machine";
-            this.btnAddMachine.UseVisualStyleBackColor = true;
-            this.btnAddMachine.Click += new System.EventHandler(this.btnAddMachine_Click);
-            // 
-            // btnRemoveMachine
-            // 
-            this.btnRemoveMachine.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveMachine.Location = new System.Drawing.Point(290, 432);
-            this.btnRemoveMachine.Name = "btnRemoveMachine";
-            this.btnRemoveMachine.Size = new System.Drawing.Size(193, 38);
-            this.btnRemoveMachine.TabIndex = 8;
-            this.btnRemoveMachine.Text = "Remove Machine";
-            this.btnRemoveMachine.UseVisualStyleBackColor = true;
-            this.btnRemoveMachine.Click += new System.EventHandler(this.BtnRemoveMachine_Click);
             // 
             // trompsDataSetBindingSource
             // 
@@ -207,6 +174,39 @@
             // 
             this.trompsDataSet.DataSetName = "TrompsDataSet";
             this.trompsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnRunReport
+            // 
+            this.btnRunReport.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRunReport.Location = new System.Drawing.Point(270, 360);
+            this.btnRunReport.Name = "btnRunReport";
+            this.btnRunReport.Size = new System.Drawing.Size(147, 34);
+            this.btnRunReport.TabIndex = 4;
+            this.btnRunReport.Text = "Run Report";
+            this.btnRunReport.UseVisualStyleBackColor = true;
+            this.btnRunReport.Click += new System.EventHandler(this.BtnRunReport_Click);
+            // 
+            // btnAddMachine
+            // 
+            this.btnAddMachine.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMachine.Location = new System.Drawing.Point(105, 423);
+            this.btnAddMachine.Name = "btnAddMachine";
+            this.btnAddMachine.Size = new System.Drawing.Size(155, 38);
+            this.btnAddMachine.TabIndex = 7;
+            this.btnAddMachine.Text = "Add Machine";
+            this.btnAddMachine.UseVisualStyleBackColor = true;
+            this.btnAddMachine.Click += new System.EventHandler(this.btnAddMachine_Click);
+            // 
+            // btnRemoveMachine
+            // 
+            this.btnRemoveMachine.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveMachine.Location = new System.Drawing.Point(383, 423);
+            this.btnRemoveMachine.Name = "btnRemoveMachine";
+            this.btnRemoveMachine.Size = new System.Drawing.Size(193, 38);
+            this.btnRemoveMachine.TabIndex = 8;
+            this.btnRemoveMachine.Text = "Remove Machine";
+            this.btnRemoveMachine.UseVisualStyleBackColor = true;
+            this.btnRemoveMachine.Click += new System.EventHandler(this.BtnRemoveMachine_Click);
             // 
             // trompsDataSetBindingSource1
             // 
@@ -221,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 482);
+            this.ClientSize = new System.Drawing.Size(687, 482);
             this.Controls.Add(this.btnRemoveMachine);
             this.Controls.Add(this.btnAddMachine);
             this.Controls.Add(this.btnRunReport);

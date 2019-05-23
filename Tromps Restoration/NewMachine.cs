@@ -25,38 +25,68 @@ namespace Tromps_Restoration
 
         private void BtnInsert_Click(object sender, EventArgs e)
         {
-          
+            bool valuesFilled = true;
             con = new SqlConnection(cs);
             con.Open();            
 
-            string CommandText = (@"INSERT INTO [Machines] ([Machine Name], [Machine Classification], [Machine Serial Number]) VALUES ('" + txtMachineName.Text + "','" + txtClassification.Text + "','" + txtSerial.Text + "')");
+            if (txtMachineNo.Text == "")
+            {
+                txtMachineNo.BackColor = Color.Red;
+                valuesFilled = false;
+            }
+            if (txtMachineName.Text == "")
+            {
+                txtMachineName.BackColor = Color.Red;
+                valuesFilled = false;
+            }
+            if (txtClassification.Text == "")
+            {
+                txtClassification.BackColor = Color.Red;
+                valuesFilled = false;
+            }
+            if (txtSerial.Text == "")
+            {
+                txtSerial.BackColor = Color.Red;
+                valuesFilled = false;
+            }
+            if (!valuesFilled)
+            {
+                MessageBox.Show("Please complete all the red fields.");
+                return;
+            }
+            else
+            {
+                string CommandText = (@"INSERT INTO [Machines] ([Machine Number], [Machine Name], [Machine Classification], [Machine Serial Number]) VALUES ('" + txtMachineNo.Text + "','" + txtMachineName.Text + "','" + txtClassification.Text + "','" + txtSerial.Text + "')");
 
-            com = new SqlCommand(CommandText, con);
+                com = new SqlCommand(CommandText, con);
 
-            try { 
-            com.ExecuteNonQuery();
-                var confirmed = MessageBox.Show("Machine has been added to the database successfully - Add another machine?", "Attempt To Add New Machine", MessageBoxButtons.YesNo);
-
-                if (confirmed == DialogResult.Yes)
+                try
                 {
-                    txtMachineName.Text = "";
-                    txtClassification.Text = "";
-                    txtSerial.Text = "";
+                    com.ExecuteNonQuery();
+                    var confirmed = MessageBox.Show("Machine has been added to the database successfully - Add another machine?", "Attempt To Add New Machine", MessageBoxButtons.YesNo);
+
+                    if (confirmed == DialogResult.Yes)
+                    {
+                        txtMachineNo.Text = "";
+                        txtMachineName.Text = "";
+                        txtClassification.Text = "";
+                        txtSerial.Text = "";
+                    }
+                    else
+                    {
+                        Machines.ActiveForm.Refresh();
+                        this.Close();
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Machines.ActiveForm.Refresh();
+                    MessageBox.Show("Error: " + ex.Message, "Attempt To Add New Machine", MessageBoxButtons.OK);
                     this.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Attempt To Add New Machine", MessageBoxButtons.OK);
-                this.Close();
-            }
-            finally
-            {
-                con.Close();
+                finally
+                {
+                    con.Close();
+                }
             }
             }
 
