@@ -191,7 +191,7 @@
             // 
             this.comboCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboCustomer.FormattingEnabled = true;
-            this.comboCustomer.Location = new System.Drawing.Point(269, 15);
+            this.comboCustomer.Location = new System.Drawing.Point(269, 21);
             this.comboCustomer.Name = "comboCustomer";
             this.comboCustomer.Size = new System.Drawing.Size(189, 32);
             this.comboCustomer.TabIndex = 8;
@@ -200,7 +200,7 @@
             // 
             this.comboMachine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboMachine.FormattingEnabled = true;
-            this.comboMachine.Location = new System.Drawing.Point(266, 78);
+            this.comboMachine.Location = new System.Drawing.Point(266, 84);
             this.comboMachine.Name = "comboMachine";
             this.comboMachine.Size = new System.Drawing.Size(195, 32);
             this.comboMachine.TabIndex = 9;

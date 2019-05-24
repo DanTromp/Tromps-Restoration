@@ -57,7 +57,6 @@ namespace Tromps_Restoration
             comboCustomer.Refresh();
             comboMachine.Refresh();
 
-
         }
 
         private void BtnAccept_Click(object sender, EventArgs e)
