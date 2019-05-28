@@ -53,8 +53,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.txtSpecialInstructions = new System.Windows.Forms.TextBox();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -338,10 +336,6 @@
             this.txtSpecialInstructions.Size = new System.Drawing.Size(641, 30);
             this.txtSpecialInstructions.TabIndex = 8;
             // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.Title = "Save Invoice?";
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
@@ -452,8 +446,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox txtSpecialInstructions;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
