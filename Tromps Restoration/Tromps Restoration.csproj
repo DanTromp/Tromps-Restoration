@@ -111,6 +111,12 @@
     <Compile Include="Invoice.Designer.cs">
       <DependentUpon>Invoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoice2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoice2.Designer.cs">
+      <DependentUpon>Invoice2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     <EmbeddedResource Include="Invoice.resx">
       <DependentUpon>Invoice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoice2.resx">
+      <DependentUpon>Invoice2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +210,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Documents\91432098350556.pdf" />
     <None Include="Documents\Hire Document.pdf" />
@@ -241,6 +251,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\trohire2.png" />
     <Content Include="SQL\script.sql" />
     <Content Include="Tromps.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

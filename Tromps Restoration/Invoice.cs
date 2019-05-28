@@ -14,6 +14,7 @@ namespace Tromps_Restoration
 {
     public partial class Invoice : Form
     {
+        public static string InvoiceNo = "";
         public Invoice()
         {
             InitializeComponent();
@@ -42,6 +43,16 @@ namespace Tromps_Restoration
             // Write the string builder's content to the form's textbox  
             //textBox1.Text = sb.ToString();
            //textBox1.SelectionStart = 0;
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
