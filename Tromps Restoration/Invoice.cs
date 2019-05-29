@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,39 +16,54 @@ namespace Tromps_Restoration
     public partial class Invoice : Form
     {
         public static string InvoiceNo = "";
+        public static InvoiceModel invoiceModel = new InvoiceModel();
         public Invoice()
         {
             InitializeComponent();
         }
 
         private void Invoice_Load(object sender, EventArgs e)
-        {
-            ListFieldNames();
-           // FillForm();
-        }
-
-        private void ListFieldNames()
-        {
-            string pdfTemplate = @"Documents\Hire Document.pdf";
-            // title the form  
-            this.Text += " - " + pdfTemplate;
-            // create a new PDF reader based on the PDF template document  
-            PdfReader pdfReader = new PdfReader(pdfTemplate);
-            // create and populate a string builder with each of the  
-            // field names available in the subject PDF  
-            StringBuilder sb = new StringBuilder();
-            foreach (var de in pdfReader.AcroFields.Fields)
+        {            
+            
+            string line = "";
+            using (StreamReader sr = new StreamReader("InvoiceNumber.txt"))
             {
-                sb.Append(de.Key.ToString() + Environment.NewLine);
+                if (sr.ReadLine() == null)
+                    InvoiceNo = "INV-1560";
+                else
+                {
+                    line = sr.ReadLine();
+                    var splitString = line.Split('-');
+                    int numberSeries = int.Parse(splitString[1]) + 1;
+
+                    InvoiceNo = splitString[0] + '-' + numberSeries.ToString();                    
+                }
             }
-            // Write the string builder's content to the form's textbox  
-            //textBox1.Text = sb.ToString();
-           //textBox1.SelectionStart = 0;
+
+            using (StreamWriter sw = new StreamWriter("InvoiceNumber.txt"))
+            {
+
+                sw.WriteLine(InvoiceNo);
+            }
+
+            txtInvoiceNo.Text = InvoiceNo;
+            txtInvoiceNo.Refresh();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            invoiceModel.hirerName = txtName.Text;
+            invoiceModel.hirerAddress = txtAddress.Text;
+            invoiceModel.hirerTelNo = txtTelNo.Text;
+            invoiceModel.hirerIdentityNo = txtIdNo.Text;
+            invoiceModel.hirerCarRegNo = txtCarReg.Text;
+            invoiceModel.hirerCarMakeModel = txtMakeModel.Text;
+            invoiceModel.addressWhereUsed = txtAddressWhereUsed.Text;
+            invoiceModel.specialInstructions = txtSpecialInstructions.Text ?? "";
 
+            Invoice2 invoice2 = new Invoice2();
+            this.Close();
+            invoice2.Show();
         }
 
         private void Button1_Click(object sender, EventArgs e)

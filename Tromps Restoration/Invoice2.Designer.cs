@@ -35,6 +35,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSubTotalAcc = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,68 +62,86 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtGetToKnowUs = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeInvoice = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtOther = new System.Windows.Forms.MaskedTextBox();
+            this.txtCollection = new System.Windows.Forms.MaskedTextBox();
+            this.txtDelivery = new System.Windows.Forms.MaskedTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.lblGrandTotal = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.lblSubTotalAcc = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.txtDiscount = new System.Windows.Forms.MaskedTextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.comboEquip1 = new System.Windows.Forms.ComboBox();
+            this.comboEquip2 = new System.Windows.Forms.ComboBox();
+            this.comboEquip3 = new System.Windows.Forms.ComboBox();
+            this.comboTool1 = new System.Windows.Forms.ComboBox();
+            this.comboTool2 = new System.Windows.Forms.ComboBox();
+            this.comboTool3 = new System.Windows.Forms.ComboBox();
+            this.numericUpDownDays1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownDays2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownDays3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownQuantity1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownQuantity2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownQuantity3 = new System.Windows.Forms.NumericUpDown();
+            this.lblRate1 = new System.Windows.Forms.Label();
+            this.lblRate2 = new System.Windows.Forms.Label();
+            this.lblRate3 = new System.Windows.Forms.Label();
+            this.lblFee1 = new System.Windows.Forms.Label();
+            this.lblFee2 = new System.Windows.Forms.Label();
+            this.lblFee3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity3)).BeginInit();
             this.SuspendLayout();
             // 
             // txtInvoiceNo
             // 
             this.txtInvoiceNo.AutoSize = true;
-            this.txtInvoiceNo.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoiceNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInvoiceNo.Location = new System.Drawing.Point(96, 83);
             this.txtInvoiceNo.Name = "txtInvoiceNo";
-            this.txtInvoiceNo.Size = new System.Drawing.Size(0, 24);
+            this.txtInvoiceNo.Size = new System.Drawing.Size(0, 25);
             this.txtInvoiceNo.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(45, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 24);
+            this.label2.Size = new System.Drawing.Size(45, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "No:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(43, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 32);
+            this.label1.Size = new System.Drawing.Size(101, 31);
             this.label1.TabIndex = 7;
             this.label1.Text = "Invoice";
             // 
@@ -143,14 +167,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblSubTotalAcc);
             this.groupBox1.Controls.Add(this.tableLayoutPanel5);
-            this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.lblSubTotal);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 163);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(661, 509);
@@ -158,58 +180,149 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hire Details";
             // 
+            // lblSubTotalAcc
+            // 
+            this.lblSubTotalAcc.AutoSize = true;
+            this.lblSubTotalAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblSubTotalAcc.Location = new System.Drawing.Point(581, 673);
+            this.lblSubTotalAcc.Name = "lblSubTotalAcc";
+            this.lblSubTotalAcc.Size = new System.Drawing.Size(89, 25);
+            this.lblSubTotalAcc.TabIndex = 15;
+            this.lblSubTotalAcc.Text = "label14";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.34033F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.22638F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.43328F));
+            this.tableLayoutPanel5.Controls.Add(this.label22, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label24, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label25, 1, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(7, 405);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 4;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(446, 95);
+            this.tableLayoutPanel5.TabIndex = 4;
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(9, 1);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(68, 20);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Quantity";
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(352, 1);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(37, 20);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Fee";
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(143, 1);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(95, 20);
+            this.label25.TabIndex = 4;
+            this.label25.Text = "Accessories";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label23.Location = new System.Drawing.Point(469, 673);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(120, 25);
+            this.label23.TabIndex = 14;
+            this.label23.Text = "Sub Total:";
+            // 
             // lblSubTotal
             // 
             this.lblSubTotal.AutoSize = true;
-            this.lblSubTotal.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotal.Location = new System.Drawing.Point(569, 351);
+            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.Location = new System.Drawing.Point(568, 405);
             this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(79, 21);
+            this.lblSubTotal.Size = new System.Drawing.Size(89, 25);
             this.lblSubTotal.TabIndex = 3;
             this.lblSubTotal.Text = "label14";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(456, 351);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(455, 405);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(107, 21);
+            this.label13.Size = new System.Drawing.Size(120, 25);
             this.label13.TabIndex = 2;
             this.label13.Text = "Sub Total:";
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 6;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.13756F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.60278F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.882535F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.31067F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.91963F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.99227F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.1579F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.65015F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.894736F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.33747F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.94427F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.01548F));
+            this.tableLayoutPanel2.Controls.Add(this.lblFee3, 5, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lblFee2, 5, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblFee1, 5, 1);
+            this.tableLayoutPanel2.Controls.Add(this.numericUpDownDays3, 4, 3);
             this.tableLayoutPanel2.Controls.Add(this.label12, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.label11, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.label10, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.label9, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label8, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboEquip1, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.comboEquip2, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.comboEquip3, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.comboTool1, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.comboTool3, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.comboTool2, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.numericUpDownDays1, 4, 1);
+            this.tableLayoutPanel2.Controls.Add(this.numericUpDownDays2, 4, 2);
+            this.tableLayoutPanel2.Controls.Add(this.numericUpDownQuantity1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.numericUpDownQuantity3, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.numericUpDownQuantity2, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblRate1, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblRate3, 3, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lblRate2, 3, 2);
+            this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 234);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(647, 114);
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(647, 156);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(579, 1);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(579, 18);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 20);
             this.label12.TabIndex = 5;
@@ -219,10 +332,10 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(449, 1);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(454, 18);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 20);
+            this.label11.Size = new System.Drawing.Size(87, 20);
             this.label11.TabIndex = 4;
             this.label11.Text = "Days Hired";
             // 
@@ -230,10 +343,10 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(344, 1);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(349, 18);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 20);
+            this.label10.Size = new System.Drawing.Size(82, 20);
             this.label10.TabIndex = 3;
             this.label10.Text = "Daily Rate";
             // 
@@ -241,10 +354,10 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(288, 1);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(289, 18);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 20);
+            this.label9.Size = new System.Drawing.Size(39, 20);
             this.label9.TabIndex = 2;
             this.label9.Text = "Tool";
             // 
@@ -252,10 +365,10 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 1);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(8, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 20);
+            this.label7.Size = new System.Drawing.Size(68, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Quantity";
             // 
@@ -263,10 +376,10 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(88, 1);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(99, 18);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(192, 20);
+            this.label8.Size = new System.Drawing.Size(170, 20);
             this.label8.TabIndex = 1;
             this.label8.Text = "Equipment Description";
             // 
@@ -283,7 +396,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dateTimeStart, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateTimeDueBack, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.dateTimeEndHire, 1, 3);
-            this.tableLayoutPanel1.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(7, 31);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -300,9 +413,9 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 12);
+            this.label3.Location = new System.Drawing.Point(3, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 21);
+            this.label3.Size = new System.Drawing.Size(219, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Initial Payment Received:";
             // 
@@ -310,9 +423,9 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 57);
+            this.label4.Location = new System.Drawing.Point(3, 55);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 21);
+            this.label4.Size = new System.Drawing.Size(111, 24);
             this.label4.TabIndex = 1;
             this.label4.Text = "Start of Hire:";
             // 
@@ -320,9 +433,9 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 102);
+            this.label5.Location = new System.Drawing.Point(3, 100);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(211, 21);
+            this.label5.Size = new System.Drawing.Size(190, 24);
             this.label5.TabIndex = 2;
             this.label5.Text = "Equipment due back:";
             // 
@@ -330,35 +443,35 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 148);
+            this.label6.Location = new System.Drawing.Point(3, 147);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 21);
+            this.label6.Size = new System.Drawing.Size(110, 24);
             this.label6.TabIndex = 3;
             this.label6.Text = "End of Hire:";
             // 
             // txtInitialAmount
             // 
             this.txtInitialAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtInitialAmount.Location = new System.Drawing.Point(269, 7);
+            this.txtInitialAmount.Location = new System.Drawing.Point(269, 8);
             this.txtInitialAmount.Mask = "R0 000.00";
             this.txtInitialAmount.Name = "txtInitialAmount";
-            this.txtInitialAmount.Size = new System.Drawing.Size(375, 30);
+            this.txtInitialAmount.Size = new System.Drawing.Size(375, 29);
             this.txtInitialAmount.TabIndex = 12;
             // 
             // dateTimeStart
             // 
             this.dateTimeStart.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimeStart.Location = new System.Drawing.Point(269, 52);
+            this.dateTimeStart.Location = new System.Drawing.Point(269, 53);
             this.dateTimeStart.Name = "dateTimeStart";
-            this.dateTimeStart.Size = new System.Drawing.Size(224, 30);
+            this.dateTimeStart.Size = new System.Drawing.Size(224, 29);
             this.dateTimeStart.TabIndex = 13;
             // 
             // dateTimeDueBack
             // 
             this.dateTimeDueBack.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimeDueBack.Location = new System.Drawing.Point(269, 97);
+            this.dateTimeDueBack.Location = new System.Drawing.Point(269, 98);
             this.dateTimeDueBack.Name = "dateTimeDueBack";
-            this.dateTimeDueBack.Size = new System.Drawing.Size(223, 30);
+            this.dateTimeDueBack.Size = new System.Drawing.Size(223, 29);
             this.dateTimeDueBack.TabIndex = 14;
             // 
             // dateTimeEndHire
@@ -366,7 +479,7 @@
             this.dateTimeEndHire.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimeEndHire.Location = new System.Drawing.Point(269, 144);
             this.dateTimeEndHire.Name = "dateTimeEndHire";
-            this.dateTimeEndHire.Size = new System.Drawing.Size(218, 30);
+            this.dateTimeEndHire.Size = new System.Drawing.Size(224, 29);
             this.dateTimeEndHire.TabIndex = 15;
             // 
             // textBox2
@@ -387,7 +500,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label16, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.label15, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtGetToKnowUs, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker1, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimeInvoice, 1, 2);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(19, 746);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
@@ -401,34 +514,34 @@
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 13);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 14);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(191, 18);
+            this.label14.Size = new System.Drawing.Size(176, 16);
             this.label14.TabIndex = 0;
             this.label14.Text = "How did you get to know us?";
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(3, 55);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(203, 24);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Hirer\'s Signature:";
             // 
             // label16
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(3, 101);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(3, 100);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 24);
+            this.label16.Size = new System.Drawing.Size(68, 25);
             this.label16.TabIndex = 2;
             this.label16.Text = "Date:";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(3, 55);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(195, 25);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Hirer\'s Signature:";
             // 
             // txtGetToKnowUs
             // 
@@ -438,30 +551,30 @@
             this.txtGetToKnowUs.Size = new System.Drawing.Size(212, 20);
             this.txtGetToKnowUs.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dateTimeInvoice
             // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(220, 100);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(212, 26);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimeInvoice.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimeInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeInvoice.Location = new System.Drawing.Point(220, 100);
+            this.dateTimeInvoice.Name = "dateTimeInvoice";
+            this.dateTimeInvoice.Size = new System.Drawing.Size(212, 26);
+            this.dateTimeInvoice.TabIndex = 4;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.maskedTextBox4, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.maskedTextBox3, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.maskedTextBox2, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtOther, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.txtCollection, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.txtDelivery, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label17, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label18, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label19, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.label20, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.label21, 0, 4);
             this.tableLayoutPanel4.Controls.Add(this.lblGrandTotal, 1, 4);
-            this.tableLayoutPanel4.Controls.Add(this.maskedTextBox1, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtDiscount, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(472, 711);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
@@ -473,14 +586,41 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(200, 171);
             this.tableLayoutPanel4.TabIndex = 13;
             // 
+            // txtOther
+            // 
+            this.txtOther.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtOther.Location = new System.Drawing.Point(103, 109);
+            this.txtOther.Mask = "R0 000.00";
+            this.txtOther.Name = "txtOther";
+            this.txtOther.Size = new System.Drawing.Size(94, 20);
+            this.txtOther.TabIndex = 9;
+            // 
+            // txtCollection
+            // 
+            this.txtCollection.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCollection.Location = new System.Drawing.Point(103, 75);
+            this.txtCollection.Mask = "R0 000.00";
+            this.txtCollection.Name = "txtCollection";
+            this.txtCollection.Size = new System.Drawing.Size(94, 20);
+            this.txtCollection.TabIndex = 8;
+            // 
+            // txtDelivery
+            // 
+            this.txtDelivery.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtDelivery.Location = new System.Drawing.Point(103, 41);
+            this.txtDelivery.Mask = "R0 000.00";
+            this.txtDelivery.Name = "txtDelivery";
+            this.txtDelivery.Size = new System.Drawing.Size(94, 20);
+            this.txtDelivery.TabIndex = 7;
+            // 
             // label17
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(3, 8);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(3, 9);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 18);
+            this.label17.Size = new System.Drawing.Size(63, 16);
             this.label17.TabIndex = 0;
             this.label17.Text = "Discount:";
             // 
@@ -488,10 +628,10 @@
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(3, 42);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 43);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(67, 18);
+            this.label18.Size = new System.Drawing.Size(61, 16);
             this.label18.TabIndex = 1;
             this.label18.Text = "Delivery:";
             // 
@@ -499,10 +639,10 @@
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(3, 76);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(3, 77);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(78, 18);
+            this.label19.Size = new System.Drawing.Size(70, 16);
             this.label19.TabIndex = 2;
             this.label19.Text = "Collection:";
             // 
@@ -510,10 +650,10 @@
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(3, 110);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(3, 111);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(50, 18);
+            this.label20.Size = new System.Drawing.Size(43, 16);
             this.label20.TabIndex = 3;
             this.label20.Text = "Other:";
             // 
@@ -521,10 +661,10 @@
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(3, 144);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(3, 143);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(56, 19);
+            this.label21.Size = new System.Drawing.Size(54, 20);
             this.label21.TabIndex = 4;
             this.label21.Text = "Total:";
             // 
@@ -532,120 +672,21 @@
             // 
             this.lblGrandTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGrandTotal.AutoSize = true;
-            this.lblGrandTotal.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrandTotal.Location = new System.Drawing.Point(103, 144);
+            this.lblGrandTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrandTotal.Location = new System.Drawing.Point(103, 143);
             this.lblGrandTotal.Name = "lblGrandTotal";
-            this.lblGrandTotal.Size = new System.Drawing.Size(69, 19);
+            this.lblGrandTotal.Size = new System.Drawing.Size(67, 20);
             this.lblGrandTotal.TabIndex = 5;
             this.lblGrandTotal.Text = "label22";
             // 
-            // maskedTextBox1
+            // txtDiscount
             // 
-            this.maskedTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.maskedTextBox1.Location = new System.Drawing.Point(103, 7);
-            this.maskedTextBox1.Mask = "R0 000.00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(94, 20);
-            this.maskedTextBox1.TabIndex = 6;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.maskedTextBox2.Location = new System.Drawing.Point(103, 41);
-            this.maskedTextBox2.Mask = "R0 000.00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(94, 20);
-            this.maskedTextBox2.TabIndex = 7;
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.maskedTextBox3.Location = new System.Drawing.Point(103, 75);
-            this.maskedTextBox3.Mask = "R0 000.00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(94, 20);
-            this.maskedTextBox3.TabIndex = 8;
-            // 
-            // maskedTextBox4
-            // 
-            this.maskedTextBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.maskedTextBox4.Location = new System.Drawing.Point(103, 109);
-            this.maskedTextBox4.Mask = "R0 000.00";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(94, 20);
-            this.maskedTextBox4.TabIndex = 9;
-            // 
-            // lblSubTotalAcc
-            // 
-            this.lblSubTotalAcc.AutoSize = true;
-            this.lblSubTotalAcc.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotalAcc.Location = new System.Drawing.Point(568, 476);
-            this.lblSubTotalAcc.Name = "lblSubTotalAcc";
-            this.lblSubTotalAcc.Size = new System.Drawing.Size(79, 21);
-            this.lblSubTotalAcc.TabIndex = 15;
-            this.lblSubTotalAcc.Text = "label14";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(456, 476);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(107, 21);
-            this.label23.TabIndex = 14;
-            this.label23.Text = "Sub Total:";
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.34033F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.22638F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.43328F));
-            this.tableLayoutPanel5.Controls.Add(this.label22, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label24, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label25, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(7, 375);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 4;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(446, 95);
-            this.tableLayoutPanel5.TabIndex = 4;
-            // 
-            // label22
-            // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(3, 1);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(79, 20);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Quantity";
-            // 
-            // label24
-            // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(352, 1);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(37, 20);
-            this.label24.TabIndex = 3;
-            this.label24.Text = "Fee";
-            // 
-            // label25
-            // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(141, 1);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(99, 20);
-            this.label25.TabIndex = 4;
-            this.label25.Text = "Accessories";
+            this.txtDiscount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtDiscount.Location = new System.Drawing.Point(103, 7);
+            this.txtDiscount.Mask = "R0 000.00";
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(94, 20);
+            this.txtDiscount.TabIndex = 6;
             // 
             // tableLayoutPanel6
             // 
@@ -665,7 +706,7 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(409, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 41);
@@ -677,7 +718,7 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(82, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 41);
@@ -690,12 +731,176 @@
             // 
             this.saveFileDialog1.Title = "Save Invoice?";
             // 
+            // comboEquip1
+            // 
+            this.comboEquip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboEquip1.FormattingEnabled = true;
+            this.comboEquip1.Location = new System.Drawing.Point(88, 60);
+            this.comboEquip1.Name = "comboEquip1";
+            this.comboEquip1.Size = new System.Drawing.Size(192, 32);
+            this.comboEquip1.TabIndex = 6;
+            // 
+            // comboEquip2
+            // 
+            this.comboEquip2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboEquip2.FormattingEnabled = true;
+            this.comboEquip2.Location = new System.Drawing.Point(88, 93);
+            this.comboEquip2.Name = "comboEquip2";
+            this.comboEquip2.Size = new System.Drawing.Size(192, 32);
+            this.comboEquip2.TabIndex = 7;
+            // 
+            // comboEquip3
+            // 
+            this.comboEquip3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboEquip3.FormattingEnabled = true;
+            this.comboEquip3.Location = new System.Drawing.Point(88, 126);
+            this.comboEquip3.Name = "comboEquip3";
+            this.comboEquip3.Size = new System.Drawing.Size(192, 32);
+            this.comboEquip3.TabIndex = 8;
+            // 
+            // comboTool1
+            // 
+            this.comboTool1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboTool1.FormattingEnabled = true;
+            this.comboTool1.Location = new System.Drawing.Point(286, 60);
+            this.comboTool1.Name = "comboTool1";
+            this.comboTool1.Size = new System.Drawing.Size(45, 32);
+            this.comboTool1.TabIndex = 9;
+            // 
+            // comboTool2
+            // 
+            this.comboTool2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboTool2.FormattingEnabled = true;
+            this.comboTool2.Location = new System.Drawing.Point(286, 93);
+            this.comboTool2.Name = "comboTool2";
+            this.comboTool2.Size = new System.Drawing.Size(45, 32);
+            this.comboTool2.TabIndex = 10;
+            // 
+            // comboTool3
+            // 
+            this.comboTool3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboTool3.FormattingEnabled = true;
+            this.comboTool3.Location = new System.Drawing.Point(286, 126);
+            this.comboTool3.Name = "comboTool3";
+            this.comboTool3.Size = new System.Drawing.Size(45, 32);
+            this.comboTool3.TabIndex = 11;
+            // 
+            // numericUpDownDays1
+            // 
+            this.numericUpDownDays1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownDays1.Location = new System.Drawing.Point(449, 60);
+            this.numericUpDownDays1.Name = "numericUpDownDays1";
+            this.numericUpDownDays1.Size = new System.Drawing.Size(97, 29);
+            this.numericUpDownDays1.TabIndex = 12;
+            // 
+            // numericUpDownDays2
+            // 
+            this.numericUpDownDays2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownDays2.Location = new System.Drawing.Point(449, 93);
+            this.numericUpDownDays2.Name = "numericUpDownDays2";
+            this.numericUpDownDays2.Size = new System.Drawing.Size(97, 29);
+            this.numericUpDownDays2.TabIndex = 13;
+            // 
+            // numericUpDownDays3
+            // 
+            this.numericUpDownDays3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownDays3.Location = new System.Drawing.Point(449, 126);
+            this.numericUpDownDays3.Name = "numericUpDownDays3";
+            this.numericUpDownDays3.Size = new System.Drawing.Size(97, 29);
+            this.numericUpDownDays3.TabIndex = 14;
+            // 
+            // numericUpDownQuantity1
+            // 
+            this.numericUpDownQuantity1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownQuantity1.Location = new System.Drawing.Point(3, 60);
+            this.numericUpDownQuantity1.Name = "numericUpDownQuantity1";
+            this.numericUpDownQuantity1.Size = new System.Drawing.Size(79, 29);
+            this.numericUpDownQuantity1.TabIndex = 15;
+            // 
+            // numericUpDownQuantity2
+            // 
+            this.numericUpDownQuantity2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownQuantity2.Location = new System.Drawing.Point(3, 93);
+            this.numericUpDownQuantity2.Name = "numericUpDownQuantity2";
+            this.numericUpDownQuantity2.Size = new System.Drawing.Size(79, 29);
+            this.numericUpDownQuantity2.TabIndex = 16;
+            // 
+            // numericUpDownQuantity3
+            // 
+            this.numericUpDownQuantity3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownQuantity3.Location = new System.Drawing.Point(3, 126);
+            this.numericUpDownQuantity3.Name = "numericUpDownQuantity3";
+            this.numericUpDownQuantity3.Size = new System.Drawing.Size(79, 29);
+            this.numericUpDownQuantity3.TabIndex = 17;
+            // 
+            // lblRate1
+            // 
+            this.lblRate1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRate1.AutoSize = true;
+            this.lblRate1.Location = new System.Drawing.Point(355, 61);
+            this.lblRate1.Name = "lblRate1";
+            this.lblRate1.Size = new System.Drawing.Size(70, 24);
+            this.lblRate1.TabIndex = 18;
+            this.lblRate1.Text = "label26";
+            // 
+            // lblRate2
+            // 
+            this.lblRate2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRate2.AutoSize = true;
+            this.lblRate2.Location = new System.Drawing.Point(355, 94);
+            this.lblRate2.Name = "lblRate2";
+            this.lblRate2.Size = new System.Drawing.Size(70, 24);
+            this.lblRate2.TabIndex = 19;
+            this.lblRate2.Text = "label27";
+            // 
+            // lblRate3
+            // 
+            this.lblRate3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRate3.AutoSize = true;
+            this.lblRate3.Location = new System.Drawing.Point(355, 127);
+            this.lblRate3.Name = "lblRate3";
+            this.lblRate3.Size = new System.Drawing.Size(70, 24);
+            this.lblRate3.TabIndex = 20;
+            this.lblRate3.Text = "label28";
+            // 
+            // lblFee1
+            // 
+            this.lblFee1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFee1.AutoSize = true;
+            this.lblFee1.Location = new System.Drawing.Point(563, 61);
+            this.lblFee1.Name = "lblFee1";
+            this.lblFee1.Size = new System.Drawing.Size(70, 24);
+            this.lblFee1.TabIndex = 21;
+            this.lblFee1.Text = "label26";
+            // 
+            // lblFee2
+            // 
+            this.lblFee2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFee2.AutoSize = true;
+            this.lblFee2.Location = new System.Drawing.Point(563, 94);
+            this.lblFee2.Name = "lblFee2";
+            this.lblFee2.Size = new System.Drawing.Size(70, 24);
+            this.lblFee2.TabIndex = 22;
+            this.lblFee2.Text = "label27";
+            // 
+            // lblFee3
+            // 
+            this.lblFee3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFee3.AutoSize = true;
+            this.lblFee3.Location = new System.Drawing.Point(563, 127);
+            this.lblFee3.Name = "lblFee3";
+            this.lblFee3.Size = new System.Drawing.Size(70, 24);
+            this.lblFee3.TabIndex = 23;
+            this.lblFee3.Text = "label28";
+            // 
             // Invoice2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 956);
+            this.Controls.Add(this.lblSubTotalAcc);
             this.Controls.Add(this.tableLayoutPanel6);
+            this.Controls.Add(this.label23);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.textBox2);
@@ -711,6 +916,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -719,9 +926,13 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -759,7 +970,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtGetToKnowUs;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeInvoice;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
@@ -767,10 +978,10 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lblGrandTotal;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtOther;
+        private System.Windows.Forms.MaskedTextBox txtCollection;
+        private System.Windows.Forms.MaskedTextBox txtDelivery;
+        private System.Windows.Forms.MaskedTextBox txtDiscount;
         private System.Windows.Forms.Label lblSubTotalAcc;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
@@ -782,5 +993,23 @@
         private System.Windows.Forms.Button button1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ComboBox comboEquip1;
+        private System.Windows.Forms.ComboBox comboEquip2;
+        private System.Windows.Forms.ComboBox comboEquip3;
+        private System.Windows.Forms.ComboBox comboTool1;
+        private System.Windows.Forms.ComboBox comboTool3;
+        private System.Windows.Forms.ComboBox comboTool2;
+        private System.Windows.Forms.NumericUpDown numericUpDownDays3;
+        private System.Windows.Forms.NumericUpDown numericUpDownDays1;
+        private System.Windows.Forms.NumericUpDown numericUpDownDays2;
+        private System.Windows.Forms.NumericUpDown numericUpDownQuantity1;
+        private System.Windows.Forms.NumericUpDown numericUpDownQuantity3;
+        private System.Windows.Forms.NumericUpDown numericUpDownQuantity2;
+        private System.Windows.Forms.Label lblRate1;
+        private System.Windows.Forms.Label lblRate3;
+        private System.Windows.Forms.Label lblRate2;
+        private System.Windows.Forms.Label lblFee3;
+        private System.Windows.Forms.Label lblFee2;
+        private System.Windows.Forms.Label lblFee1;
     }
 }

@@ -40,6 +40,7 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnMachine = new System.Windows.Forms.Button();
             this.btnHiresAndServices = new System.Windows.Forms.Button();
+            this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMainPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +76,7 @@
             // managementToolStripMenuItem
             // 
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.invoiceToolStripMenuItem,
             this.customersToolStripMenuItem,
             this.machineHireToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
@@ -84,14 +86,14 @@
             // customersToolStripMenuItem
             // 
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.customersToolStripMenuItem.Text = "Customers";
             this.customersToolStripMenuItem.Click += new System.EventHandler(this.CustomersToolStripMenuItem_Click);
             // 
             // machineHireToolStripMenuItem
             // 
             this.machineHireToolStripMenuItem.Name = "machineHireToolStripMenuItem";
-            this.machineHireToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
+            this.machineHireToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.machineHireToolStripMenuItem.Text = "Machines";
             this.machineHireToolStripMenuItem.Click += new System.EventHandler(this.MachineHireToolStripMenuItem_Click);
             // 
@@ -121,7 +123,7 @@
             // btnCustomers
             // 
             this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCustomers.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.Location = new System.Drawing.Point(12, 75);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(352, 50);
@@ -133,7 +135,7 @@
             // btnMachine
             // 
             this.btnMachine.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMachine.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMachine.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMachine.Location = new System.Drawing.Point(12, 142);
             this.btnMachine.Name = "btnMachine";
             this.btnMachine.Size = new System.Drawing.Size(352, 50);
@@ -146,7 +148,7 @@
             // 
             this.btnHiresAndServices.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnHiresAndServices.Enabled = false;
-            this.btnHiresAndServices.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHiresAndServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHiresAndServices.Location = new System.Drawing.Point(12, 210);
             this.btnHiresAndServices.Name = "btnHiresAndServices";
             this.btnHiresAndServices.Size = new System.Drawing.Size(352, 50);
@@ -154,6 +156,13 @@
             this.btnHiresAndServices.Text = "Hires and Services";
             this.btnHiresAndServices.UseVisualStyleBackColor = true;
             this.btnHiresAndServices.Click += new System.EventHandler(this.BtnHiresAndServices_Click);
+            // 
+            // invoiceToolStripMenuItem
+            // 
+            this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
+            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.invoiceToolStripMenuItem.Text = "Invoice";
+            this.invoiceToolStripMenuItem.Click += new System.EventHandler(this.InvoiceToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -192,5 +201,6 @@
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnMachine;
         private System.Windows.Forms.Button btnHiresAndServices;
+        private System.Windows.Forms.ToolStripMenuItem invoiceToolStripMenuItem;
     }
 }

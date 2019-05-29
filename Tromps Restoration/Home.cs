@@ -47,5 +47,12 @@ namespace Tromps_Restoration
         {
 
         }
+
+        private void InvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Invoice inv = new Invoice();
+            this.Hide();
+            inv.Show();
+        }
     }
 }

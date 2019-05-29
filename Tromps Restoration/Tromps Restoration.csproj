@@ -117,6 +117,7 @@
     <Compile Include="Invoice2.Designer.cs">
       <DependentUpon>Invoice2.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceModel.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,21 +150,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tromps.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tromps.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tromps.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tromps.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tromps.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tromps.edmx</DependentUpon>
-    </Compile>
     <Compile Include="TrompsDataSet.cs">
       <DependentUpon>TrompsDataSet.xsd</DependentUpon>
     </Compile>
@@ -226,15 +212,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="Tromps.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Tromps.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="SQL\Data-Tier.dacpac" />
     <None Include="Tromps Restoration_TemporaryKey.pfx" />
-    <None Include="Tromps.edmx.diagram">
-      <DependentUpon>Tromps.edmx</DependentUpon>
-    </None>
     <None Include="TrompsDataSet.xsc">
       <DependentUpon>TrompsDataSet.xsd</DependentUpon>
     </None>
@@ -252,17 +231,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trohire2.png" />
+    <Content Include="InvoiceNumber.txt" />
     <Content Include="SQL\script.sql" />
-    <Content Include="Tromps.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Tromps.Context.cs</LastGenOutput>
-      <DependentUpon>Tromps.edmx</DependentUpon>
-    </Content>
-    <Content Include="Tromps.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Tromps.edmx</DependentUpon>
-      <LastGenOutput>Tromps.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
