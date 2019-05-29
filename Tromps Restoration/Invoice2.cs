@@ -32,7 +32,7 @@ namespace Tromps_Restoration
 
             using (var context = new TrompsEntities1())
             {
-                var equipList = (from a in context.Machines orderby a ascending select a.Machine_Name).ToArray();
+                var equipList = (from a in context.Machines select a.Machine_Name).ToArray();
 
                 comboEquip1.Items.AddRange(equipList);
                 comboEquip2.Items.AddRange(equipList);
