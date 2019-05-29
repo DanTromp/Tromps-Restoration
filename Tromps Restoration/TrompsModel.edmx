@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TrompsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="First Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Last Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID Number" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="Telphone Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hire Orders">
+          <Key>
+            <PropertyRef Name="orderId" />
+          </Key>
+          <Property Name="orderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Customer ID" Type="int" Nullable="false" />
+          <Property Name="Machine ID" Type="int" Nullable="false" />
+          <Property Name="Date Booked Out" Type="date" Nullable="false" />
+          <Property Name="Date Booked In" Type="date" Nullable="false" />
+          <Property Name="Invoice Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cost Per Day" Type="smallmoney" Nullable="false" />
+          <Property Name="Total Cost" Type="smallmoney" />
+        </EntityType>
+        <EntityType Name="Invoices">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="HirerName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="HirerAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="HirerTelNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HirerIdentityNo" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="HirerCarReg" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HirerCarMakeModel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AddressWhereUsed" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SpecialInstructions" Type="nvarchar(max)" />
+          <Property Name="InitialPaymentReceived" Type="smallmoney" />
+          <Property Name="StartOfHire" Type="datetime" Nullable="false" />
+          <Property Name="EquipmentDueBack" Type="datetime" Nullable="false" />
+          <Property Name="EndOfHire" Type="datetime" Nullable="false" />
+          <Property Name="EquipmentNos" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EquipmentSubtotal" Type="smallmoney" Nullable="false" />
+          <Property Name="Accessories" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccessoriesSubtotal" Type="smallmoney" />
+          <Property Name="Discount" Type="smallmoney" />
+          <Property Name="Delivery" Type="smallmoney" />
+          <Property Name="Collection" Type="smallmoney" />
+          <Property Name="Other" Type="smallmoney" />
+          <Property Name="GrandTotal" Type="smallmoney" Nullable="false" />
+          <Property Name="HowDidYouKnowUs" Type="nvarchar(max)" />
+          <Property Name="InvoiceDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Machine Services">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Machine ID" Type="int" Nullable="false" />
+          <Property Name="Day Booked Out" Type="date" Nullable="false" />
+          <Property Name="Day Booked In" Type="date" Nullable="false" />
+          <Property Name="Cost of Service" Type="smallmoney" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Machines">
+          <Key>
+            <PropertyRef Name="Machine Id" />
+          </Key>
+          <Property Name="Machine Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Machine Number" Type="int" Nullable="false" />
+          <Property Name="Machine Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Machine Classification" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Machine Serial Number" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <Association Name="FK_Hire Orders_Customers">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Hire Orders" Type="Self.Hire Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Hire Orders">
+              <PropertyRef Name="Customer ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hire Orders_Machines">
+          <End Role="Machines" Type="Self.Machines" Multiplicity="1" />
+          <End Role="Hire Orders" Type="Self.Hire Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Machines">
+              <PropertyRef Name="Machine Id" />
+            </Principal>
+            <Dependent Role="Hire Orders">
+              <PropertyRef Name="Machine ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Machine Services_Machines">
+          <End Role="Machines" Type="Self.Machines" Multiplicity="1" />
+          <End Role="Machine Services" Type="Self.Machine Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Machines">
+              <PropertyRef Name="Machine Id" />
+            </Principal>
+            <Dependent Role="Machine Services">
+              <PropertyRef Name="Machine ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TrompsModelStoreContainer">
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hire Orders" EntityType="Self.Hire Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Machine Services" EntityType="Self.Machine Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Machines" EntityType="Self.Machines" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Hire Orders_Customers" Association="Self.FK_Hire Orders_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Hire Orders" EntitySet="Hire Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hire Orders_Machines" Association="Self.FK_Hire Orders_Machines">
+            <End Role="Machines" EntitySet="Machines" />
+            <End Role="Hire Orders" EntitySet="Hire Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Machine Services_Machines" Association="Self.FK_Machine Services_Machines">
+            <End Role="Machines" EntitySet="Machines" />
+            <End Role="Machine Services" EntitySet="Machine Services" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TrompsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_Number" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telphone_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email_Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Hire_Orders" Relationship="Self.FK_Hire_Orders_Customers" FromRole="Customers" ToRole="Hire_Orders" />
+        </EntityType>
+        <EntityType Name="Hire_Order">
+          <Key>
+            <PropertyRef Name="orderId" />
+          </Key>
+          <Property Name="orderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Machine_ID" Type="Int32" Nullable="false" />
+          <Property Name="Date_Booked_Out" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Date_Booked_In" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Invoice_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cost_Per_Day" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="Total_Cost" Type="Decimal" Precision="10" Scale="4" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Hire_Orders_Customers" FromRole="Hire_Orders" ToRole="Customers" />
+          <NavigationProperty Name="Machine" Relationship="Self.FK_Hire_Orders_Machines" FromRole="Hire_Orders" ToRole="Machines" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Name="InvoiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HirerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HirerAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HirerTelNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HirerIdentityNo" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HirerCarReg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HirerCarMakeModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddressWhereUsed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SpecialInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InitialPaymentReceived" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="StartOfHire" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EquipmentDueBack" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndOfHire" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EquipmentNos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EquipmentSubtotal" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="Accessories" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccessoriesSubtotal" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="Discount" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="Delivery" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="Collection" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="Other" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="GrandTotal" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="HowDidYouKnowUs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Machine_Service">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Machine_ID" Type="Int32" Nullable="false" />
+          <Property Name="Day_Booked_Out" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Day_Booked_In" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Cost_of_Service" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Machine" Relationship="Self.FK_Machine_Services_Machines" FromRole="Machine_Services" ToRole="Machines" />
+        </EntityType>
+        <EntityType Name="Machine">
+          <Key>
+            <PropertyRef Name="Machine_Id" />
+          </Key>
+          <Property Name="Machine_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Machine_Number" Type="Int32" Nullable="false" />
+          <Property Name="Machine_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Machine_Classification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Machine_Serial_Number" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Hire_Orders" Relationship="Self.FK_Hire_Orders_Machines" FromRole="Machines" ToRole="Hire_Orders" />
+          <NavigationProperty Name="Machine_Services" Relationship="Self.FK_Machine_Services_Machines" FromRole="Machines" ToRole="Machine_Services" />
+        </EntityType>
+        <Association Name="FK_Hire_Orders_Customers">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Hire_Orders" Type="Self.Hire_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Hire_Orders">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hire_Orders_Machines">
+          <End Role="Machines" Type="Self.Machine" Multiplicity="1" />
+          <End Role="Hire_Orders" Type="Self.Hire_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Machines">
+              <PropertyRef Name="Machine_Id" />
+            </Principal>
+            <Dependent Role="Hire_Orders">
+              <PropertyRef Name="Machine_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Machine_Services_Machines">
+          <End Role="Machines" Type="Self.Machine" Multiplicity="1" />
+          <End Role="Machine_Services" Type="Self.Machine_Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Machines">
+              <PropertyRef Name="Machine_Id" />
+            </Principal>
+            <Dependent Role="Machine_Services">
+              <PropertyRef Name="Machine_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TrompsEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Hire_Orders" EntityType="Self.Hire_Order" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+          <EntitySet Name="Machine_Services" EntityType="Self.Machine_Service" />
+          <EntitySet Name="Machines" EntityType="Self.Machine" />
+          <AssociationSet Name="FK_Hire_Orders_Customers" Association="Self.FK_Hire_Orders_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Hire_Orders" EntitySet="Hire_Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hire_Orders_Machines" Association="Self.FK_Hire_Orders_Machines">
+            <End Role="Machines" EntitySet="Machines" />
+            <End Role="Hire_Orders" EntitySet="Hire_Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Machine_Services_Machines" Association="Self.FK_Machine_Services_Machines">
+            <End Role="Machines" EntitySet="Machines" />
+            <End Role="Machine_Services" EntitySet="Machine_Services" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TrompsModelStoreContainer" CdmEntityContainer="TrompsEntities1">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="TrompsModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="ID_Number" ColumnName="ID Number" />
+                <ScalarProperty Name="Telphone_Number" ColumnName="Telphone Number" />
+                <ScalarProperty Name="Email_Address" ColumnName="Email Address" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hire_Orders">
+            <EntityTypeMapping TypeName="TrompsModel.Hire_Order">
+              <MappingFragment StoreEntitySet="Hire Orders">
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer ID" />
+                <ScalarProperty Name="Machine_ID" ColumnName="Machine ID" />
+                <ScalarProperty Name="Date_Booked_Out" ColumnName="Date Booked Out" />
+                <ScalarProperty Name="Date_Booked_In" ColumnName="Date Booked In" />
+                <ScalarProperty Name="Invoice_Number" ColumnName="Invoice Number" />
+                <ScalarProperty Name="Cost_Per_Day" ColumnName="Cost Per Day" />
+                <ScalarProperty Name="Total_Cost" ColumnName="Total Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="TrompsModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoices">
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="HirerName" ColumnName="HirerName" />
+                <ScalarProperty Name="HirerAddress" ColumnName="HirerAddress" />
+                <ScalarProperty Name="HirerTelNo" ColumnName="HirerTelNo" />
+                <ScalarProperty Name="HirerIdentityNo" ColumnName="HirerIdentityNo" />
+                <ScalarProperty Name="HirerCarReg" ColumnName="HirerCarReg" />
+                <ScalarProperty Name="HirerCarMakeModel" ColumnName="HirerCarMakeModel" />
+                <ScalarProperty Name="AddressWhereUsed" ColumnName="AddressWhereUsed" />
+                <ScalarProperty Name="SpecialInstructions" ColumnName="SpecialInstructions" />
+                <ScalarProperty Name="InitialPaymentReceived" ColumnName="InitialPaymentReceived" />
+                <ScalarProperty Name="StartOfHire" ColumnName="StartOfHire" />
+                <ScalarProperty Name="EquipmentDueBack" ColumnName="EquipmentDueBack" />
+                <ScalarProperty Name="EndOfHire" ColumnName="EndOfHire" />
+                <ScalarProperty Name="EquipmentNos" ColumnName="EquipmentNos" />
+                <ScalarProperty Name="EquipmentSubtotal" ColumnName="EquipmentSubtotal" />
+                <ScalarProperty Name="Accessories" ColumnName="Accessories" />
+                <ScalarProperty Name="AccessoriesSubtotal" ColumnName="AccessoriesSubtotal" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                <ScalarProperty Name="Collection" ColumnName="Collection" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+                <ScalarProperty Name="HowDidYouKnowUs" ColumnName="HowDidYouKnowUs" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Machine_Services">
+            <EntityTypeMapping TypeName="TrompsModel.Machine_Service">
+              <MappingFragment StoreEntitySet="Machine Services">
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="Machine_ID" ColumnName="Machine ID" />
+                <ScalarProperty Name="Day_Booked_Out" ColumnName="Day Booked Out" />
+                <ScalarProperty Name="Day_Booked_In" ColumnName="Day Booked In" />
+                <ScalarProperty Name="Cost_of_Service" ColumnName="Cost of Service" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Machines">
+            <EntityTypeMapping TypeName="TrompsModel.Machine">
+              <MappingFragment StoreEntitySet="Machines">
+                <ScalarProperty Name="Machine_Id" ColumnName="Machine Id" />
+                <ScalarProperty Name="Machine_Number" ColumnName="Machine Number" />
+                <ScalarProperty Name="Machine_Name" ColumnName="Machine Name" />
+                <ScalarProperty Name="Machine_Classification" ColumnName="Machine Classification" />
+                <ScalarProperty Name="Machine_Serial_Number" ColumnName="Machine Serial Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,6 +1,6 @@
 ﻿namespace Tromps_Restoration
 {
-    partial class Invoice
+    partial class Invoice1
     {
         /// <summary>
         /// Required designer variable.

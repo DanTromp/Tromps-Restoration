@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,9 +51,19 @@ namespace Tromps_Restoration
 
         private void InvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Invoice inv = new Invoice();
+            Invoice1 inv = new Invoice1();
             this.Hide();
             inv.Show();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(@"C:\Tromps"))
+                Directory.CreateDirectory(@"C:\Tromps");
+
+            if (!File.Exists(@"C:\Tromps\InvoiceNumber.txt"))
+                File.Create(@"C:\Tromps\InvoiceNumber.txt");
+
         }
     }
 }

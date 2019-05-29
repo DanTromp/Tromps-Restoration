@@ -26,11 +26,18 @@ namespace Tromps_Restoration
 
         private void Invoice2_Load(object sender, EventArgs e)
         {
-            txtInvoiceNo.Text = Invoice.InvoiceNo.ToString();
-            invModel = Invoice.invoiceModel;            
+            txtInvoiceNo.Text = Invoice1.InvoiceNo.ToString();
+            invModel = Invoice1.invoiceModel;
 
 
+            using (var context = new TrompsEntities1())
+            {
+                var equipList = (from a in context.Machines orderby a ascending select a.Machine_Name).ToArray();
 
+                comboEquip1.Items.AddRange(equipList);
+                comboEquip2.Items.AddRange(equipList);
+                comboEquip3.Items.AddRange(equipList);
+            }
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -52,7 +59,7 @@ namespace Tromps_Restoration
 
                 if (confirmed == DialogResult.Yes)
                 {
-                    Invoice invoice = new Invoice();
+                    Invoice1 invoice = new Invoice1();
                     this.Close();
                     invoice.Show();
                 }
@@ -76,6 +83,16 @@ namespace Tromps_Restoration
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            var confirmed = MessageBox.Show("Are you sure you want to cancel?", "Cancel New Invoice", MessageBoxButtons.YesNo);
+
+            if (confirmed == DialogResult.Yes)
+            {
+                this.Close();
+                Home hme = new Home();
+                hme.Show();
+            }
+            else
+                return;
 
         }
     }

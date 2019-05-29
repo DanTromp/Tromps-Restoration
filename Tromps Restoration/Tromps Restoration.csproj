@@ -49,10 +49,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>1C2916C780DD904BDD5303551A8BE1A975D35EBE</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2C5966445110F16D4595D4B161707AE8443F5961</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Tromps Restoration_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Tromps Restoration_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -87,6 +87,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs">
+      <DependentUpon>TrompsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +102,9 @@
     <Compile Include="HiresAndServices.Designer.cs">
       <DependentUpon>HiresAndServices.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hire_Order.cs">
+      <DependentUpon>TrompsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,10 +112,13 @@
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Invoice.cs">
+      <DependentUpon>TrompsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Invoice.Designer.cs">
-      <DependentUpon>Invoice.cs</DependentUpon>
+    <Compile Include="Invoice1.Designer.cs">
+      <DependentUpon>Invoice1.cs</DependentUpon>
     </Compile>
     <Compile Include="Invoice2.cs">
       <SubType>Form</SubType>
@@ -124,6 +133,9 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Machine.cs">
+      <DependentUpon>TrompsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MachineReports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,9 @@
     </Compile>
     <Compile Include="Machines.Designer.cs">
       <DependentUpon>Machines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Machine_Service.cs">
+      <DependentUpon>TrompsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="NewCustomer.cs">
       <SubType>Form</SubType>
@@ -158,6 +173,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrompsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TrompsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrompsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrompsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrompsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrompsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrompsModel.edmx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,8 +197,8 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Invoice.resx">
-      <DependentUpon>Invoice.cs</DependentUpon>
+    <EmbeddedResource Include="Invoice1.resx">
+      <DependentUpon>Invoice1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice2.resx">
       <DependentUpon>Invoice2.cs</DependentUpon>
@@ -213,6 +243,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SQL\Data-Tier.dacpac" />
+    <None Include="Tromps Restoration_2_TemporaryKey.pfx" />
     <None Include="Tromps Restoration_TemporaryKey.pfx" />
     <None Include="TrompsDataSet.xsc">
       <DependentUpon>TrompsDataSet.xsd</DependentUpon>
@@ -225,11 +256,28 @@
     <None Include="TrompsDataSet.xss">
       <DependentUpon>TrompsDataSet.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="TrompsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TrompsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TrompsModel.edmx.diagram">
+      <DependentUpon>TrompsModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TrompsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TrompsModel.edmx</DependentUpon>
+      <LastGenOutput>TrompsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TrompsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TrompsModel.edmx</DependentUpon>
+      <LastGenOutput>TrompsModel.cs</LastGenOutput>
+    </Content>
     <None Include="Resources\trohire2.png" />
     <Content Include="InvoiceNumber.txt" />
     <Content Include="SQL\script.sql" />
