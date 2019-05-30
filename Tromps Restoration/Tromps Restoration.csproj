@@ -49,10 +49,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2C5966445110F16D4595D4B161707AE8443F5961</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>DF7488E490E3FA0E17E84EF8351B6A58F00FA41F</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Tromps Restoration_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Tromps Restoration_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -243,7 +243,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SQL\Data-Tier.dacpac" />
-    <None Include="Tromps Restoration_2_TemporaryKey.pfx" />
     <None Include="Tromps Restoration_TemporaryKey.pfx" />
     <None Include="TrompsDataSet.xsc">
       <DependentUpon>TrompsDataSet.xsd</DependentUpon>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TrompsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TrompsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Customers">
           <Key>
             <PropertyRef Name="CustomerId" />
@@ -30,9 +30,25 @@
           <Property Name="Cost Per Day" Type="smallmoney" Nullable="false" />
           <Property Name="Total Cost" Type="smallmoney" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Tromps.dbo.Invoices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Invoices">
           <Key>
             <PropertyRef Name="InvoiceNo" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
           </Key>
           <Property Name="InvoiceNo" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="HirerName" Type="nvarchar(max)" Nullable="false" />
@@ -78,6 +94,8 @@
           <Property Name="Machine Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Machine Classification" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Machine Serial Number" Type="nvarchar" MaxLength="150" />
+          <Property Name="Daily Rate" Type="smallmoney" />
+          <Property Name="Deposit" Type="smallmoney" />
         </EntityType>
         <Association Name="FK_Hire Orders_Customers">
           <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
@@ -118,9 +136,36 @@
         <EntityContainer Name="TrompsModelStoreContainer">
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Hire Orders" EntityType="Self.Hire Orders" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Machine Services" EntityType="Self.Machine Services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Machines" EntityType="Self.Machines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoices" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Invoices].[InvoiceNo] AS [InvoiceNo], 
+    [Invoices].[HirerName] AS [HirerName], 
+    [Invoices].[HirerAddress] AS [HirerAddress], 
+    [Invoices].[HirerTelNo] AS [HirerTelNo], 
+    [Invoices].[HirerIdentityNo] AS [HirerIdentityNo], 
+    [Invoices].[HirerCarReg] AS [HirerCarReg], 
+    [Invoices].[HirerCarMakeModel] AS [HirerCarMakeModel], 
+    [Invoices].[AddressWhereUsed] AS [AddressWhereUsed], 
+    [Invoices].[SpecialInstructions] AS [SpecialInstructions], 
+    [Invoices].[InitialPaymentReceived] AS [InitialPaymentReceived], 
+    [Invoices].[StartOfHire] AS [StartOfHire], 
+    [Invoices].[EquipmentDueBack] AS [EquipmentDueBack], 
+    [Invoices].[EndOfHire] AS [EndOfHire], 
+    [Invoices].[EquipmentNos] AS [EquipmentNos], 
+    [Invoices].[EquipmentSubtotal] AS [EquipmentSubtotal], 
+    [Invoices].[Accessories] AS [Accessories], 
+    [Invoices].[AccessoriesSubtotal] AS [AccessoriesSubtotal], 
+    [Invoices].[Discount] AS [Discount], 
+    [Invoices].[Delivery] AS [Delivery], 
+    [Invoices].[Collection] AS [Collection], 
+    [Invoices].[Other] AS [Other], 
+    [Invoices].[GrandTotal] AS [GrandTotal], 
+    [Invoices].[HowDidYouKnowUs] AS [HowDidYouKnowUs], 
+    [Invoices].[InvoiceDate] AS [InvoiceDate]
+    FROM [dbo].[Invoices] AS [Invoices]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Hire Orders_Customers" Association="Self.FK_Hire Orders_Customers">
             <End Role="Customers" EntitySet="Customers" />
             <End Role="Hire Orders" EntitySet="Hire Orders" />
@@ -134,8 +179,7 @@
             <End Role="Machine Services" EntitySet="Machine Services" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TrompsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -218,6 +262,8 @@
           <Property Name="Machine_Serial_Number" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Hire_Orders" Relationship="Self.FK_Hire_Orders_Machines" FromRole="Machines" ToRole="Hire_Orders" />
           <NavigationProperty Name="Machine_Services" Relationship="Self.FK_Machine_Services_Machines" FromRole="Machines" ToRole="Machine_Services" />
+          <Property Name="Daily_Rate" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="Deposit" Type="Decimal" Precision="10" Scale="4" />
         </EntityType>
         <Association Name="FK_Hire_Orders_Customers">
           <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
@@ -351,6 +397,8 @@
           <EntitySetMapping Name="Machines">
             <EntityTypeMapping TypeName="TrompsModel.Machine">
               <MappingFragment StoreEntitySet="Machines">
+                <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+                <ScalarProperty Name="Daily_Rate" ColumnName="Daily Rate" />
                 <ScalarProperty Name="Machine_Id" ColumnName="Machine Id" />
                 <ScalarProperty Name="Machine_Number" ColumnName="Machine Number" />
                 <ScalarProperty Name="Machine_Name" ColumnName="Machine Name" />

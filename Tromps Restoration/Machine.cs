@@ -26,6 +26,8 @@ namespace Tromps_Restoration
         public string Machine_Name { get; set; }
         public string Machine_Classification { get; set; }
         public string Machine_Serial_Number { get; set; }
+        public Nullable<decimal> Daily_Rate { get; set; }
+        public Nullable<decimal> Deposit { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hire_Order> Hire_Orders { get; set; }
