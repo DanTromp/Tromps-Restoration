@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-
-using System;
-
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Tromps_Restoration
@@ -22,6 +15,10 @@ namespace Tromps_Restoration
         private SqlConnection con;
         private SqlCommand com = new SqlCommand();
         private int daysHired;
+        private decimal dailyCost;
+        private decimal final;
+        private decimal bigTotal;
+        List<Machine> machines = new List<Machine>();
 
         public Invoice2()
         {
@@ -35,11 +32,13 @@ namespace Tromps_Restoration
 
             using (var context = new TrompsEntities1())
             {
+                machines = (from a in context.Machines select a).ToList();
                 var equipList = (from a in context.Machines select a.Machine_Name).Distinct().ToArray();
 
                 comboEquip1.Items.AddRange(equipList);
                 comboEquip2.Items.AddRange(equipList);
                 comboEquip3.Items.AddRange(equipList);
+                
             }
         }
 
@@ -99,104 +98,112 @@ namespace Tromps_Restoration
         {
             var itemSelected = this.comboEquip1.SelectedItem.ToString();
 
-            using (var context = new TrompsEntities1())
-            {
-                var tools = (from a in context.Machines where a.Machine_Name == itemSelected select a.Machine_Number.ToString()).Distinct().ToArray();
+            var toolItems = (from a in machines where a.Machine_Name == itemSelected select a.Machine_Number.ToString()).ToArray();
 
-                comboTool1.Items.AddRange(tools);
-            }
+                comboTool1.Items.AddRange(toolItems);
+            
         }
 
         private void ComboEquip2_SelectedIndexChanged(object sender, EventArgs e)
         {
             var itemSelected = this.comboEquip2.SelectedItem.ToString();
 
-            using (var context = new TrompsEntities1())
-            {
-                var tools = (from a in context.Machines where a.Machine_Name == itemSelected select a.Machine_Number.ToString()).Distinct().ToArray();
+            var toolItems = (from a in machines where a.Machine_Name == itemSelected select a.Machine_Number.ToString()).ToArray();
 
-                comboTool2.Items.AddRange(tools);
-            }
+            comboTool2.Items.AddRange(toolItems);
+            
         }
 
         private void ComboEquip3_SelectedIndexChanged(object sender, EventArgs e)
         {
             var itemSelected = this.comboEquip3.SelectedItem.ToString();
 
-            using (var context = new TrompsEntities1())
-            {
-                var tools = (from a in context.Machines where a.Machine_Name == itemSelected select a.Machine_Number.ToString()).Distinct().ToArray();
+            var toolItems = (from a in machines where a.Machine_Name == itemSelected select a.Machine_Number.ToString()).ToArray();
 
-                comboTool3.Items.AddRange(tools);
-            }
+            comboTool3.Items.AddRange(toolItems);
+            
         }
 
         private void ComboTool1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (var context = new TrompsEntities1())
-            {
-                var tool = from a in context.Machines where a.Machine_Number == int.Parse(this.comboTool1.SelectedItem.ToString()) select a.Daily_Rate;
+            var selectedItem = int.Parse(comboTool1.SelectedItem.ToString());
+            var item = (from a in machines where a.Machine_Number == selectedItem select a.Daily_Rate).First();
 
-                lblRate1.Text = "R" + tool.ToString() + ".00";
+            dailyCost = (decimal)item;
 
-                lblRate1.Refresh();
-            }
+                lblRate1.Text = "R" + item.ToString().Substring(0, item.ToString().Length - 2);
+
 
             numericUpDownDays1.Value = daysHired;
         }
 
         private void ComboTool2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (var context = new TrompsEntities1())
-            {
-                var tools = (from a in context.Machines where a.Machine_Number == int.Parse(this.comboTool2.SelectedItem.ToString()) select a.Daily_Rate.ToString());
+            var selectedItem = int.Parse(comboTool1.SelectedItem.ToString());
+            var item = (from a in machines where a.Machine_Number == selectedItem select a.Daily_Rate).First();
 
-                lblRate2.Text = "R" + tools.ToString() + ".00";
-            }
+            dailyCost = (decimal)item;
+
+            lblRate2.Text = "R" + item.ToString().Substring(0, item.ToString().Length - 2);
+
 
             numericUpDownDays2.Value = daysHired;
         }
 
         private void ComboTool3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (var context = new TrompsEntities1())
-            {
-                var tools = (from a in context.Machines where a.Machine_Number == int.Parse(this.comboTool3.SelectedItem.ToString()) select a.Daily_Rate.ToString());
+            var selectedItem = int.Parse(comboTool1.SelectedItem.ToString());
+            var item = (from a in machines where a.Machine_Number == selectedItem select a.Daily_Rate).First();
 
-                lblRate3.Text = "R" + tools.ToString() + ".00";
-            }
+            dailyCost = (decimal)item;
+
+            lblRate3.Text = "R" + item.ToString().Substring(0, item.ToString().Length - 2);
+
 
             numericUpDownDays3.Value = daysHired;
         }
 
         private void NumericUpDownDays1_ValueChanged(object sender, EventArgs e)
         {
-            lblFee1.Text = "R" + (decimal.Parse(lblRate1.Text.Substring(1, lblRate1.Text.Length)) * (decimal)this.numericUpDownDays1.Value).ToString();
+            final = dailyCost * daysHired;
+
+            lblFee1.Text = "R" + final.ToString().Substring(0, final.ToString().Length - 2);
         }
 
         private void NumericUpDownDays2_ValueChanged(object sender, EventArgs e)
         {
-            lblFee2.Text = "R" + (decimal.Parse(lblRate2.Text.Substring(1, lblRate2.Text.Length)) * (decimal)this.numericUpDownDays2.Value).ToString();
+
+            final = dailyCost * daysHired;
+
+            lblFee2.Text = "R" + final.ToString().Substring(0, final.ToString().Length - 2);
         }
 
         private void NumericUpDownDays3_ValueChanged(object sender, EventArgs e)
         {
-            lblFee3.Text = "R" + (decimal.Parse(lblRate3.Text.Substring(1, lblRate3.Text.Length)) * (decimal)this.numericUpDownDays3.Value).ToString();
+
+            final = dailyCost * daysHired;
+
+            lblFee3.Text = "R" + final.ToString().Substring(0, final.ToString().Length - 2);
         }
 
         private void LblFee1_TextChanged(object sender, EventArgs e)
         {
-            lblSubTotal.Text = "R" + (decimal.Parse(lblFee1.Text) + decimal.Parse(lblFee2.Text) + decimal.Parse(lblFee3.Text)).ToString();
+            bigTotal += final;
+
+            lblSubTotal.Text = "R" + bigTotal.ToString().Substring(0, bigTotal.ToString().Length - 2);
         }
 
         private void LblFee2_TextChanged(object sender, EventArgs e)
         {
-            lblSubTotal.Text = "R" + (decimal.Parse(lblFee1.Text) + decimal.Parse(lblFee2.Text) + decimal.Parse(lblFee3.Text)).ToString();
+            bigTotal += final;
+            lblSubTotal.Text = "R" + bigTotal.ToString().Substring(0, bigTotal.ToString().Length - 2);
         }
 
         private void LblFee3_TextChanged(object sender, EventArgs e)
         {
-            lblSubTotal.Text = "R" + (decimal.Parse(lblFee1.Text) + decimal.Parse(lblFee2.Text) + decimal.Parse(lblFee3.Text)).ToString();
+            bigTotal += final;
+
+            lblSubTotal.Text = "R" + bigTotal.ToString().Substring(0, bigTotal.ToString().Length - 2);
         }
 
         private void DateTimeEndHire_ValueChanged(object sender, EventArgs e)
