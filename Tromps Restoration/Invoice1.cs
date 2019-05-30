@@ -17,37 +17,36 @@ namespace Tromps_Restoration
     {
         public static string InvoiceNo = "";
         public static InvoiceModel invoiceModel = new InvoiceModel();
+
         public Invoice1()
         {
             InitializeComponent();
         }
 
         private void Invoice_Load(object sender, EventArgs e)
-        {            
-            
+        {
             string line = "";
             using (StreamReader sr = new StreamReader(@"C:\Tromps\InvoiceNumber.txt"))
             {
-                if (sr.ReadLine() == null)
+                if (File.ReadAllText(@"C:\Tromps\InvoiceNumber.txt") == null)
                     InvoiceNo = "INV-1560";
                 else
                 {
-                    line = sr.ReadLine();
+                    line = File.ReadAllText(@"C:\Tromps\InvoiceNumber.txt");
+                    line = line.Substring(0, line.Length - 2);
                     var splitString = line.Split('-');
                     int numberSeries = int.Parse(splitString[1]) + 1;
 
-                    InvoiceNo = splitString[0] + '-' + numberSeries.ToString();                    
+                    InvoiceNo = splitString[0] + '-' + numberSeries.ToString();
                 }
             }
 
             using (StreamWriter sw = new StreamWriter(@"C:\Tromps\InvoiceNumber.txt"))
             {
-
                 sw.WriteLine(InvoiceNo);
             }
 
             txtInvoiceNo.Text = InvoiceNo;
-            txtInvoiceNo.Refresh();
         }
 
         private void Button2_Click(object sender, EventArgs e)

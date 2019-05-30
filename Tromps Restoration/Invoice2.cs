@@ -101,7 +101,7 @@ namespace Tromps_Restoration
 
             using (var context = new TrompsEntities1())
             {
-                var tools = (from a in context.Machines where a.Machine_Classification == itemSelected select a.Machine_Number.ToString()).Distinct().ToArray();
+                var tools = (from a in context.Machines where a.Machine_Name == itemSelected select a.Machine_Number.ToString()).Distinct().ToArray();
 
                 comboTool1.Items.AddRange(tools);
             }
@@ -113,7 +113,7 @@ namespace Tromps_Restoration
 
             using (var context = new TrompsEntities1())
             {
-                var tools = (from a in context.Machines where a.Machine_Classification == itemSelected select a.Machine_Number.ToString()).Distinct().ToArray();
+                var tools = (from a in context.Machines where a.Machine_Name == itemSelected select a.Machine_Number.ToString()).Distinct().ToArray();
 
                 comboTool2.Items.AddRange(tools);
             }
@@ -125,7 +125,7 @@ namespace Tromps_Restoration
 
             using (var context = new TrompsEntities1())
             {
-                var tools = (from a in context.Machines where a.Machine_Classification == itemSelected select a.Machine_Number.ToString()).Distinct().ToArray();
+                var tools = (from a in context.Machines where a.Machine_Name == itemSelected select a.Machine_Number.ToString()).Distinct().ToArray();
 
                 comboTool3.Items.AddRange(tools);
             }
@@ -135,9 +135,11 @@ namespace Tromps_Restoration
         {
             using (var context = new TrompsEntities1())
             {
-                var tools = (from a in context.Machines where a.Machine_Number == int.Parse(this.comboTool1.SelectedItem.ToString()) select a.Daily_Rate.ToString());
+                var tool = from a in context.Machines where a.Machine_Number == int.Parse(this.comboTool1.SelectedItem.ToString()) select a.Daily_Rate;
 
-                lblRate1.Text = "R" + tools.ToString() + ".00";
+                lblRate1.Text = "R" + tool.ToString() + ".00";
+
+                lblRate1.Refresh();
             }
 
             numericUpDownDays1.Value = daysHired;
