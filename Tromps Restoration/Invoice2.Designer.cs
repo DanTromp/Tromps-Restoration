@@ -146,6 +146,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(526, 13);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -306,6 +307,7 @@
             this.lblFee3.Size = new System.Drawing.Size(58, 24);
             this.lblFee3.TabIndex = 23;
             this.lblFee3.Text = "R0.00";
+            this.lblFee3.TextChanged += new System.EventHandler(this.LblFee3_TextChanged);
             // 
             // lblFee2
             // 
@@ -316,6 +318,7 @@
             this.lblFee2.Size = new System.Drawing.Size(58, 24);
             this.lblFee2.TabIndex = 22;
             this.lblFee2.Text = "R0.00";
+            this.lblFee2.TextChanged += new System.EventHandler(this.LblFee2_TextChanged);
             // 
             // lblFee1
             // 
@@ -423,6 +426,7 @@
             this.comboEquip2.Name = "comboEquip2";
             this.comboEquip2.Size = new System.Drawing.Size(192, 32);
             this.comboEquip2.TabIndex = 7;
+            this.comboEquip2.SelectedIndexChanged += new System.EventHandler(this.ComboEquip2_SelectedIndexChanged);
             // 
             // comboEquip3
             // 
@@ -432,6 +436,7 @@
             this.comboEquip3.Name = "comboEquip3";
             this.comboEquip3.Size = new System.Drawing.Size(192, 32);
             this.comboEquip3.TabIndex = 8;
+            this.comboEquip3.SelectedIndexChanged += new System.EventHandler(this.ComboEquip3_SelectedIndexChanged);
             // 
             // comboTool1
             // 
@@ -451,6 +456,7 @@
             this.comboTool3.Name = "comboTool3";
             this.comboTool3.Size = new System.Drawing.Size(45, 32);
             this.comboTool3.TabIndex = 11;
+            this.comboTool3.SelectionChangeCommitted += new System.EventHandler(this.ComboTool3_SelectedIndexChanged);
             // 
             // comboTool2
             // 
@@ -460,6 +466,7 @@
             this.comboTool2.Name = "comboTool2";
             this.comboTool2.Size = new System.Drawing.Size(45, 32);
             this.comboTool2.TabIndex = 10;
+            this.comboTool2.SelectionChangeCommitted += new System.EventHandler(this.ComboTool2_SelectedIndexChanged);
             // 
             // numericUpDownDays1
             // 
@@ -476,7 +483,6 @@
             this.numericUpDownDays1.Size = new System.Drawing.Size(97, 29);
             this.numericUpDownDays1.TabIndex = 12;
             this.numericUpDownDays1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDownDays1.ValueChanged += new System.EventHandler(this.NumericUpDownDays1_ValueChanged);
             // 
             // numericUpDownDays2
             // 
@@ -778,6 +784,7 @@
             this.txtOther.Name = "txtOther";
             this.txtOther.Size = new System.Drawing.Size(94, 20);
             this.txtOther.TabIndex = 9;
+            this.txtOther.Leave += new System.EventHandler(this.TxtOther_TextChanged);
             // 
             // txtCollection
             // 
@@ -787,6 +794,7 @@
             this.txtCollection.Name = "txtCollection";
             this.txtCollection.Size = new System.Drawing.Size(94, 20);
             this.txtCollection.TabIndex = 8;
+            this.txtCollection.Leave += new System.EventHandler(this.TxtCollection_TextChanged);
             // 
             // txtDelivery
             // 
@@ -796,6 +804,7 @@
             this.txtDelivery.Name = "txtDelivery";
             this.txtDelivery.Size = new System.Drawing.Size(94, 20);
             this.txtDelivery.TabIndex = 7;
+            this.txtDelivery.Leave += new System.EventHandler(this.TxtDelivery_TextChanged);
             // 
             // label17
             // 
@@ -869,8 +878,10 @@
             this.txtDiscount.Location = new System.Drawing.Point(103, 7);
             this.txtDiscount.Mask = "R0 000.00";
             this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDiscount.Size = new System.Drawing.Size(94, 20);
             this.txtDiscount.TabIndex = 6;
+            this.txtDiscount.Leave += new System.EventHandler(this.TxtDiscount_TextChanged);
             // 
             // tableLayoutPanel6
             // 
@@ -928,6 +939,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Invoice2";
             this.Text = "Invoice2";
             this.Load += new System.EventHandler(this.Invoice2_Load);

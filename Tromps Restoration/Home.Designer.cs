@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menuMainPage = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.machineHireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +42,6 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnMachine = new System.Windows.Forms.Button();
             this.btnHiresAndServices = new System.Windows.Forms.Button();
-            this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMainPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,17 +84,24 @@
             this.managementToolStripMenuItem.Size = new System.Drawing.Size(111, 27);
             this.managementToolStripMenuItem.Text = "Management";
             // 
+            // invoiceToolStripMenuItem
+            // 
+            this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
+            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
+            this.invoiceToolStripMenuItem.Text = "Invoice";
+            this.invoiceToolStripMenuItem.Click += new System.EventHandler(this.InvoiceToolStripMenuItem_Click);
+            // 
             // customersToolStripMenuItem
             // 
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
             this.customersToolStripMenuItem.Text = "Customers";
             this.customersToolStripMenuItem.Click += new System.EventHandler(this.CustomersToolStripMenuItem_Click);
             // 
             // machineHireToolStripMenuItem
             // 
             this.machineHireToolStripMenuItem.Name = "machineHireToolStripMenuItem";
-            this.machineHireToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.machineHireToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
             this.machineHireToolStripMenuItem.Text = "Machines";
             this.machineHireToolStripMenuItem.Click += new System.EventHandler(this.MachineHireToolStripMenuItem_Click);
             // 
@@ -157,13 +165,6 @@
             this.btnHiresAndServices.UseVisualStyleBackColor = true;
             this.btnHiresAndServices.Click += new System.EventHandler(this.BtnHiresAndServices_Click);
             // 
-            // invoiceToolStripMenuItem
-            // 
-            this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
-            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
-            this.invoiceToolStripMenuItem.Text = "Invoice";
-            this.invoiceToolStripMenuItem.Click += new System.EventHandler(this.InvoiceToolStripMenuItem_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -176,6 +177,7 @@
             this.Controls.Add(this.btnCustomers);
             this.Controls.Add(this.menuMainPage);
             this.Font = new System.Drawing.Font("Constantia", 9.75F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuMainPage;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

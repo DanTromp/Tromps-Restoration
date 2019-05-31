@@ -47,6 +47,8 @@ namespace Tromps_Restoration
             }
 
             txtInvoiceNo.Text = InvoiceNo;
+
+            txtName.Focus();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -59,6 +61,16 @@ namespace Tromps_Restoration
             invoiceModel.hirerCarMakeModel = txtMakeModel.Text;
             invoiceModel.addressWhereUsed = txtAddressWhereUsed.Text;
             invoiceModel.specialInstructions = txtSpecialInstructions.Text ?? "";
+
+            var splitName = txtName.Text.Split(' ');
+
+            TrompsEntities1 context = new TrompsEntities1();
+            var existsAlready = (from a in context.Customers where a.ID_Number == txtIdNo.Text select a).FirstOrDefault();
+
+            if (existsAlready == null)
+                context.Customers.Add(new Customer { First_Name = splitName[0], Last_Name = splitName[1], Address = txtAddress.Text, ID_Number = txtIdNo.Text, Telphone_Number = txtTelNo.Text });
+
+            context.SaveChanges();
 
             Invoice2 invoice2 = new Invoice2();
             this.Close();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice1));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.txtTelNo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -56,7 +58,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtTelNo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,6 +70,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(525, 13);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -249,6 +251,15 @@
             this.txtName.Size = new System.Drawing.Size(496, 29);
             this.txtName.TabIndex = 6;
             // 
+            // txtTelNo
+            // 
+            this.txtTelNo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTelNo.Location = new System.Drawing.Point(148, 105);
+            this.txtTelNo.Mask = "(999) 000-0000";
+            this.txtTelNo.Name = "txtTelNo";
+            this.txtTelNo.Size = new System.Drawing.Size(496, 29);
+            this.txtTelNo.TabIndex = 12;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
@@ -378,15 +389,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // txtTelNo
-            // 
-            this.txtTelNo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTelNo.Location = new System.Drawing.Point(148, 105);
-            this.txtTelNo.Mask = "(999) 000-0000";
-            this.txtTelNo.Name = "txtTelNo";
-            this.txtTelNo.Size = new System.Drawing.Size(496, 29);
-            this.txtTelNo.TabIndex = 12;
-            // 
             // Invoice1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,6 +403,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Invoice1";
             this.Text = "Invoice";
             this.Load += new System.EventHandler(this.Invoice_Load);

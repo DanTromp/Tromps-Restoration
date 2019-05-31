@@ -14,7 +14,7 @@
           <Property Name="Last Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ID Number" Type="nvarchar" MaxLength="13" Nullable="false" />
           <Property Name="Telphone Number" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Email Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Email Address" Type="nvarchar" MaxLength="250" />
           <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Hire Orders">
@@ -192,7 +192,7 @@ warning 6002: The table/view 'Tromps.dbo.Invoices' does not have a primary key d
           <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ID_Number" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Telphone_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Email_Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email_Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Hire_Orders" Relationship="Self.FK_Hire_Orders_Customers" FromRole="Customers" ToRole="Hire_Orders" />
         </EntityType>

@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMachine));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtMachineNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,7 +40,6 @@
             this.txtSerial = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtMachineNo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(516, 382);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // txtMachineNo
+            // 
+            this.txtMachineNo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMachineNo.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMachineNo.Location = new System.Drawing.Point(289, 22);
+            this.txtMachineNo.Name = "txtMachineNo";
+            this.txtMachineNo.Size = new System.Drawing.Size(195, 32);
+            this.txtMachineNo.TabIndex = 6;
             // 
             // label1
             // 
@@ -164,21 +174,13 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Machine Number:";
             // 
-            // txtMachineNo
-            // 
-            this.txtMachineNo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMachineNo.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMachineNo.Location = new System.Drawing.Point(289, 22);
-            this.txtMachineNo.Name = "txtMachineNo";
-            this.txtMachineNo.Size = new System.Drawing.Size(195, 32);
-            this.txtMachineNo.TabIndex = 6;
-            // 
             // NewMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 417);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewMachine";
             this.Text = "New Machine";
             this.tableLayoutPanel1.ResumeLayout(false);

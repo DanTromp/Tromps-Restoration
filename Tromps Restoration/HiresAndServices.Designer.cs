@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HiresAndServices));
             this.tabHires = new System.Windows.Forms.TabControl();
             this.Hires = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -191,7 +192,7 @@
             // 
             this.comboCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboCustomer.FormattingEnabled = true;
-            this.comboCustomer.Location = new System.Drawing.Point(269, 21);
+            this.comboCustomer.Location = new System.Drawing.Point(269, 15);
             this.comboCustomer.Name = "comboCustomer";
             this.comboCustomer.Size = new System.Drawing.Size(189, 32);
             this.comboCustomer.TabIndex = 8;
@@ -200,7 +201,7 @@
             // 
             this.comboMachine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboMachine.FormattingEnabled = true;
-            this.comboMachine.Location = new System.Drawing.Point(266, 84);
+            this.comboMachine.Location = new System.Drawing.Point(266, 78);
             this.comboMachine.Name = "comboMachine";
             this.comboMachine.Size = new System.Drawing.Size(195, 32);
             this.comboMachine.TabIndex = 9;
@@ -254,6 +255,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 496);
             this.Controls.Add(this.tabHires);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HiresAndServices";
             this.Text = "HiresAndServices";
             this.Load += new System.EventHandler(this.HiresAndServices_Load);
