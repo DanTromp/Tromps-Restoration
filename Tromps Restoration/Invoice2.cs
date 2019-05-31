@@ -21,6 +21,7 @@ namespace Tromps_Restoration
         private decimal final;
         private decimal bigTotal;
         private List<Machine> machines = new List<Machine>();
+        private TrompsEntities1 context = new TrompsEntities1();
 
         public Invoice2()
         {
@@ -53,22 +54,47 @@ namespace Tromps_Restoration
             con.Open();
 
             int[] toolNos = new int[5];
+            string toolNumbers = "";
 
-            if (comboTool1.Text != "")
+            if (comboTool1.Text != "") {
                 toolNos[0] = int.Parse(comboTool1.Text);
-            if (comboTool2.Text != "")
+                toolNumbers = comboTool1.Text;
+            }
+            if (comboTool2.Text != "") { 
                 toolNos[1] = int.Parse(comboTool2.Text);
+                toolNumbers = toolNumbers + "," + comboTool2.Text;
+            }
             if (comboTool3.Text != "")
+            {
                 toolNos[2] = int.Parse(comboTool3.Text);
+                toolNumbers = toolNumbers + "," + comboTool3.Text;
+            }
 
-            string CommandText = (@"INSERT INTO [dbo].[Invoices]([InvoiceNo],[HirerName],[HirerAddress],[HirerTelNo],[HirerIdentityNo],[HirerCarReg],[HirerCarMakeModel],[AddressWhereUsed],[SpecialInstructions],[InitialPaymentReceived],[StartOfHire],[EquipmentDueBack],[EndOfHire],[EquipmentNos],[EquipmentSubtotal],[Accessories],[AccessoriesSubtotal],[Discount],[Delivery],[Collection],[Other],[GrandTotal],[HowDidYouKnowUs],[InvoiceDate])VALUES(" + txtInvoiceNo.Text + "," + invModel.hirerName + "," + invModel.hirerAddress + "," + invModel.hirerTelNo + "," + invModel.hirerIdentityNo + "," + invModel.hirerCarRegNo + "," + invModel.hirerCarMakeModel + "," + invModel.addressWhereUsed + "," + invModel.specialInstructions + "," + txtInitialAmount.Text + "," + dateTimeStart.Value + "," + dateTimeDueBack.Value + "," + dateTimeEndHire.Value + "," + toolNos.ToString() + "," + lblSubTotal.Text.Substring(1, lblSubTotal.Text.Length) + "," + "Accessories" + "," + lblSubTotalAcc.Text.Substring(1, lblSubTotalAcc.Text.Length) + "," + txtDiscount.Text + "," + txtDelivery.Text + "," + txtCollection.Text + "," + txtOther.Text + "," + lblGrandTotal.Text.Substring(1, lblGrandTotal.Text.Length) + "," + txtGetToKnowUs.Text + "," + dateTimeInvoice.Value + "'");
-
-            com = new SqlCommand(CommandText, con);
+            context.Invoices.Add(new Invoice { Accessories = "", AccessoriesSubtotal = decimal.Parse(lblSubTotalAcc.Text.Substring(1, lblSubTotalAcc.Text.Length - 3)), AddressWhereUsed = invModel.addressWhereUsed, Collection = decimal.Parse(txtCollection.Text.Substring(1, txtCollection.Text.Length - 3)), Delivery = decimal.Parse(txtDelivery.Text.Substring(1, txtDelivery.Text.Length - 3)), Discount = decimal.Parse(txtDiscount.Text.Substring(1, txtDiscount.Text.Length - 3)), EndOfHire = dateTimeEndHire.Value.Date, EquipmentDueBack = dateTimeDueBack.Value.Date, EquipmentNos = toolNumbers, EquipmentSubtotal = decimal.Parse(lblSubTotal.Text.Substring(1, lblSubTotal.Text.Length - 3)), GrandTotal = decimal.Parse(lblGrandTotal.Text.Substring(1, lblGrandTotal.Text.Length - 3)), HirerAddress = invModel.hirerAddress, HirerCarMakeModel = invModel.hirerCarMakeModel, HirerCarReg = invModel.hirerCarRegNo, HirerIdentityNo = invModel.hirerIdentityNo, HirerName = invModel.hirerName, HirerTelNo = invModel.hirerTelNo, HowDidYouKnowUs = txtGetToKnowUs.Text, InitialPaymentReceived = decimal.Parse(txtInitialAmount.Text.Substring(1, txtInitialAmount.Text.Length - 3)), InvoiceDate = dateTimeInvoice.Value.Date, InvoiceNo = txtInvoiceNo.Text, Other = decimal.Parse(txtOther.Text.Substring(1, txtOther.Text.Length - 3)), SpecialInstructions = invModel.specialInstructions, StartOfHire = dateTimeStart.Value.Date});
 
             try
             {
-                com.ExecuteNonQuery();
+
+                context.SaveChanges();
+
                 var confirmed = MessageBox.Show("Invoice has been added to the database successfully - Add another Invoice?", "Attempt To Add New Invoice", MessageBoxButtons.YesNo);
+
+                var customerId = (from a in context.Customers where a.ID_Number == invModel.hirerIdentityNo select a.CustomerId).First();
+
+                for (int i = 0; i < toolNos.Length; i++)
+                {
+                    if (i == 0)
+                        context.Hire_Orders.Add(new Hire_Order { Customer_ID = customerId, Machine_ID = toolNos[i], Invoice_Number = txtInvoiceNo.Text, Cost_Per_Day = decimal.Parse(lblRate1.Text.Substring(1, lblRate1.Text.Length - 2)), Date_Booked_Out = dateTimeStart.Value, Date_Booked_In = dateTimeDueBack.Value, Total_Cost = decimal.Parse(lblFee1.Text.Substring(1, lblFee1.Text.Length - 2))});
+
+                    if (i == 1)
+                        context.Hire_Orders.Add(new Hire_Order { Customer_ID = customerId, Machine_ID = toolNos[i], Invoice_Number = txtInvoiceNo.Text, Cost_Per_Day = decimal.Parse(lblRate2.Text.Substring(1, lblRate2.Text.Length - 2)), Date_Booked_Out = dateTimeStart.Value, Date_Booked_In = dateTimeDueBack.Value, Total_Cost = decimal.Parse(lblFee2.Text.Substring(1, lblFee2.Text.Length - 2)) });
+
+                    if (i == 2)
+                        context.Hire_Orders.Add(new Hire_Order { Customer_ID = customerId, Machine_ID = toolNos[i], Invoice_Number = txtInvoiceNo.Text, Cost_Per_Day = decimal.Parse(lblRate3.Text.Substring(1, lblRate3.Text.Length - 2)), Date_Booked_Out = dateTimeStart.Value, Date_Booked_In = dateTimeDueBack.Value, Total_Cost = decimal.Parse(lblFee3.Text.Substring(1, lblFee3.Text.Length - 2)) });
+                }
+
+                context.SaveChanges();
+                
 
                 if (confirmed == DialogResult.Yes)
                 {
@@ -184,6 +210,7 @@ namespace Tromps_Restoration
         {
             bigTotal += final;
             lblGrandTotal.Text = "R" + bigTotal.ToString().Substring(0, bigTotal.ToString().Length - 2);
+            lblSubTotal.Text = "R" + bigTotal.ToString().Substring(0, bigTotal.ToString().Length - 2);
         }
 
         private void LblFee2_TextChanged(object sender, EventArgs e)
