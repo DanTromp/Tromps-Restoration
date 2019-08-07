@@ -231,6 +231,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\Tromps Restoration.application" />
+    <None Include="bin\Debug\Tromps Restoration.exe.config" />
+    <None Include="bin\Debug\Tromps Restoration.exe.manifest" />
     <None Include="Documents\91432098350556.pdf" />
     <None Include="Documents\Hire Document.pdf" />
     <None Include="Documents\Tromps Pricelist.pdf" />
@@ -246,6 +249,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SQL\Data-Tier.dacpac" />
+    <None Include="SQL\Tromps.bak" />
     <None Include="Tromps Restoration_TemporaryKey.pfx" />
     <None Include="TrompsDataSet.xsc">
       <DependentUpon>TrompsDataSet.xsd</DependentUpon>
@@ -270,6 +274,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\app.publish\Tromps Restoration.exe" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\itextsharp.dll" />
+    <Content Include="bin\Debug\itextsharp.xml" />
+    <Content Include="bin\Debug\Tromps Restoration.exe" />
+    <Content Include="bin\Debug\Tromps Restoration.pdb" />
     <Content Include="trohire2_3Do_icon.ico" />
     <Content Include="trohire2_jBO_icon.ico" />
     <Content Include="TrompsModel.Context.tt">
@@ -300,6 +313,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
