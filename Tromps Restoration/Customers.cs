@@ -86,12 +86,16 @@ namespace Tromps_Restoration
             {
 
             }
+
+            dataGridCustomers.Refresh();
         }
 
         private void BtnAddNew_Click(object sender, EventArgs e)
         {
             NewCustomer newCustomer = new NewCustomer();
             newCustomer.ShowDialog();
+
+            dataGridCustomers.Refresh();
         }
     }
 }

@@ -84,14 +84,14 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(119, 28);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.exitToolStripMenuItem.Text = "Home";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click_1);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(119, 28);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 28);
             this.exitToolStripMenuItem1.Text = "Exit";
             // 
             // managementToolStripMenuItem

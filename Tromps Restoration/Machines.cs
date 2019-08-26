@@ -54,14 +54,7 @@ namespace Tromps_Restoration
             Customers customers = new Customers();
             this.Hide();
             customers.Show();
-        }
-
-        private void ExitToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            Home home = new Home();
-            this.Hide();
-            home.Show();
-        }
+        }        
 
         private void BtnRunReport_Click(object sender, EventArgs e)
         {
@@ -78,7 +71,9 @@ namespace Tromps_Restoration
         private void btnAddMachine_Click(object sender, EventArgs e)
         {
             NewMachine newMachine = new NewMachine();
-            newMachine.ShowDialog();            
+            newMachine.ShowDialog();
+
+            dataGridMachines.Refresh();
         }
 
         private void BtnRemoveMachine_Click(object sender, EventArgs e)
@@ -112,6 +107,8 @@ namespace Tromps_Restoration
             {
                 
             }
+
+            dataGridMachines.Refresh();
         }
     }
 }
